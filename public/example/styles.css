@@ -1,0 +1,93 @@
+/*
+  Match the workshop tokens in app/globals.css (--workshop-*).
+  Update both files together when the design changes.
+*/
+:root {
+  --workshop-bg: #f6f4ef;
+  --workshop-ink: #1c1917;
+  --workshop-accent: #1d4ed8;
+  --workshop-accent-ink: #ffffff;
+  --workshop-muted: #e7e2d9;
+  --workshop-muted-ink: #57534e;
+  --workshop-card: #ffffff;
+  --workshop-line: #d6d3d1;
+  --workshop-font: "Geist", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--workshop-bg);
+  color: var(--workshop-ink);
+  font-family: var(--workshop-font);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--workshop-accent);
+}
+
+.site-header {
+  background: var(--workshop-card);
+  border-bottom: 1px solid var(--workshop-line);
+}
+
+.site-header a {
+  display: inline-block;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0.9rem 1rem;
+  color: var(--workshop-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.page {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.kicker {
+  margin: 0 0 0.5rem;
+  color: var(--workshop-accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.profile {
+  background: var(--workshop-card);
+  border: 1px solid var(--workshop-line);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.profile p {
+  margin: 0;
+}
+
+.classes {
+  margin: 1.25rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.classes li + li {
+  margin-top: 0.35rem;
+}
+
+.note {
+  margin: 1.5rem 0 0;
+  color: var(--workshop-muted-ink);
+  font-size: 0.875rem;
+}
