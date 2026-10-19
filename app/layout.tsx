@@ -1,34 +1,33 @@
 import type { Metadata } from "next";
-import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
+import { DM_Mono, Manrope } from "next/font/google";
+import { SiteHeader } from "@/components/workshop/site-header";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "HTML & CSS Workshop",
-    template: "%s · HTML & CSS Workshop",
+    default: "IADT Computing — Taster Session",
+    template: "%s · IADT Computing",
   },
   description:
-    "A step-by-step guide for a student workshop on basic HTML and CSS.",
+    "A step-by-step workshop guide for building a meme creation app with HTML, CSS, and p5.js.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${dmSans.variable} ${plusJakarta.variable} h-full antialiased`}
-    >
-      <body className="flex min-h-full flex-col">
+    <html lang="en" className={`${manrope.variable} ${dmMono.variable}`}>
+      <body>
         <SiteHeader />
         {children}
       </body>

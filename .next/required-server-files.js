@@ -105,7 +105,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/home/inda/Documents/dev/taster-day-vercel/web-foundations",
+    "outputFileTracingRoot": "/home/inda/dev/web-foundations",
     "allowedDevOrigins": [
       "127.0.0.1"
     ],
@@ -184,7 +184,7 @@ self.__SERVER_FILES_MANIFEST={
       "proxyPrefetch": "flexible",
       "optimisticClientCache": true,
       "manualClientBasePath": false,
-      "cpus": 7,
+      "cpus": 19,
       "memoryBasedWorkersCount": false,
       "imgOptConcurrency": null,
       "imgOptOperationCache": null,
@@ -348,9 +348,9 @@ self.__SERVER_FILES_MANIFEST={
           "as": "*.css"
         }
       },
-      "root": "/home/inda/Documents/dev/taster-day-vercel/web-foundations"
+      "root": "/home/inda/dev/web-foundations"
     },
-    "repoRoot": "/home/inda/Documents/dev/taster-day-vercel/web-foundations",
+    "repoRoot": "/home/inda/dev/web-foundations",
     "distDirRoot": ".next",
     "_originalRewrites": {
       "beforeFiles": [],
@@ -367,7 +367,7 @@ self.__SERVER_FILES_MANIFEST={
       "fallback": []
     }
   },
-  "appDir": "/home/inda/Documents/dev/taster-day-vercel/web-foundations",
+  "appDir": "/home/inda/dev/web-foundations",
   "relativeAppDir": "",
   "files": [
     ".next/package.json",

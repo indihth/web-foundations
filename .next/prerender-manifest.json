@@ -6,7 +6,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 16670,
+      "htmlSize": 18158,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -79,7 +79,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 12515,
+      "htmlSize": 9422,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -148,7 +148,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 8549,
+      "htmlSize": 19698,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -179,12 +179,12 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/guide/add-content": {
+    "/guide/add-a-stylesheet": {
       "renderingMode": "PARTIALLY_STATIC",
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 20112,
+      "htmlSize": 16130,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -204,8 +204,8 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/guide/[slug]",
-      "dataRoute": "/guide/add-content.rsc",
-      "prefetchDataRoute": "/guide/add-content.rsc",
+      "dataRoute": "/guide/add-a-stylesheet.rsc",
+      "prefetchDataRoute": "/guide/add-a-stylesheet.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -215,12 +215,12 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/guide/add-styles": {
+    "/guide/add-the-words": {
       "renderingMode": "PARTIALLY_STATIC",
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 20176,
+      "htmlSize": 16180,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -240,8 +240,8 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/guide/[slug]",
-      "dataRoute": "/guide/add-styles.rsc",
-      "prefetchDataRoute": "/guide/add-styles.rsc",
+      "dataRoute": "/guide/add-the-words.rsc",
+      "prefetchDataRoute": "/guide/add-the-words.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -251,12 +251,12 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/guide/check-result": {
+    "/guide/check-your-page": {
       "renderingMode": "PARTIALLY_STATIC",
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 20348,
+      "htmlSize": 16166,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -276,8 +276,8 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/guide/[slug]",
-      "dataRoute": "/guide/check-result.rsc",
-      "prefetchDataRoute": "/guide/check-result.rsc",
+      "dataRoute": "/guide/check-your-page.rsc",
+      "prefetchDataRoute": "/guide/check-your-page.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -287,12 +287,12 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/guide/page-structure": {
+    "/guide/copy-the-sketch": {
       "renderingMode": "PARTIALLY_STATIC",
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 18543,
+      "htmlSize": 17433,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -312,8 +312,152 @@
       ],
       "initialRevalidateSeconds": false,
       "srcRoute": "/guide/[slug]",
-      "dataRoute": "/guide/page-structure.rsc",
-      "prefetchDataRoute": "/guide/page-structure.rsc",
+      "dataRoute": "/guide/copy-the-sketch.rsc",
+      "prefetchDataRoute": "/guide/copy-the-sketch.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/guide/keep-going": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 17016,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/guide/[slug]",
+      "dataRoute": "/guide/keep-going.rsc",
+      "prefetchDataRoute": "/guide/keep-going.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/guide/place-the-sketch": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 15622,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/guide/[slug]",
+      "dataRoute": "/guide/place-the-sketch.rsc",
+      "prefetchDataRoute": "/guide/place-the-sketch.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/guide/set-up-the-page": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 16997,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/guide/[slug]",
+      "dataRoute": "/guide/set-up-the-page.rsc",
+      "prefetchDataRoute": "/guide/set-up-the-page.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/guide/style-the-page": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 15696,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/guide/[slug]",
+      "dataRoute": "/guide/style-the-page.rsc",
+      "prefetchDataRoute": "/guide/style-the-page.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",

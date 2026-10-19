@@ -242,72 +242,238 @@ __turbopack_context__.s([
 ]);
 const steps = [
     {
-        slug: "page-structure",
+        slug: "set-up-the-page",
         title: "Set up the page",
-        summary: "Every web page starts with the same small skeleton.",
-        body: [
-            "Create a new file named index.html. This placeholder step will be replaced with the real workshop instructions.",
-            "Inside it, add a document type, an html element, a head, and a body. Put the title “Alex Rivera” in the head.",
-            "Save the file and open it in a browser. You should see a blank page with that title on the tab."
+        summary: "Create index.html and the basic document.",
+        kicker: "Build your page",
+        intro: "Create the file every web page starts with and give your browser a clear structure to read.",
+        variant: "setup",
+        instructions: [
+            {
+                number: "1",
+                title: "Create your first file.",
+                body: [
+                    "In your project folder, create a new file named index.html. The name and lowercase letters matter."
+                ]
+            },
+            {
+                number: "2",
+                title: "Add the basic document.",
+                body: [
+                    "Copy this starter structure into the file. It gives your browser the information it needs to read the page."
+                ]
+            },
+            {
+                number: "3",
+                title: "Open it in your browser.",
+                body: [
+                    "Save the file, then open index.html in a browser. A blank white page means it is working."
+                ],
+                tip: "Keep your editor and browser side by side. Save, refresh, and check your work after every small change."
+            }
         ],
         advanced: {
-            title: "Tell the browser what this document is",
+            title: "Add helpful metadata",
             body: [
-                "Add lang=\"en\" to the html element so the page language is explicit.",
-                "Add a meta charset of utf-8 in the head so names and punctuation display correctly."
-            ]
+                "If you have time, add a viewport meta tag inside the head. It tells smaller screens how wide the page should be.",
+                "This is not required for the workshop path, but it will help your page look better on a phone when you revisit it later."
+            ],
+            code: '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
         }
     },
     {
-        slug: "add-content",
+        slug: "add-the-words",
         title: "Add the words",
-        summary: "Put the profile content in the body, before any styling.",
-        body: [
-            "Inside the body, add a heading that reads Alex Rivera.",
-            "Add a paragraph: “I am learning HTML and CSS in this workshop.”",
-            "Add a list of three classes: HTML basics, CSS colors, and Checking my page."
+        summary: "Put the page content in before any styling.",
+        kicker: "Build your page",
+        intro: "Put the page content in before any styling.",
+        variant: "standard",
+        instructions: [
+            {
+                number: "1",
+                title: "Add the page heading.",
+                body: [
+                    'Inside the body, add a heading that says “Meme-ify”.'
+                ]
+            },
+            {
+                number: "2",
+                title: "Add the instructions.",
+                body: [
+                    "Write one short sentence that tells someone how to use your page."
+                ]
+            },
+            {
+                number: "3",
+                title: "Check the order.",
+                body: [
+                    "Save and refresh. Your heading should appear above the instructions."
+                ]
+            }
         ],
         advanced: {
             title: "Use elements that describe the content",
             body: [
-                "Wrap the name in a header, the paragraph in main, and the classes in an unordered list.",
-                "Keep a single h1. Do not skip from a heading to a much smaller one."
+                "Wrap the heading and instructions in semantic elements such as header and main so the page structure is clear to browsers and assistive tech.",
+                "Keep a single main heading on the page. Do not skip heading levels."
             ]
         }
     },
     {
-        slug: "add-styles",
+        slug: "add-a-stylesheet",
         title: "Add a stylesheet",
-        summary: "Link a CSS file and set the page colors and type.",
-        body: [
-            "Create styles.css in the same folder as index.html.",
-            "In the head, add a link element that points at styles.css.",
-            "Set the page background to a warm off-white, the text to a near-black, and the font to a sans-serif."
+        summary: "Link a CSS file and set color and type.",
+        kicker: "Build your page",
+        intro: "Link a CSS file and set color and type.",
+        variant: "standard",
+        instructions: [
+            {
+                number: "1",
+                title: "Create the CSS file.",
+                body: [
+                    "Create a new file named styles.css in the same folder."
+                ]
+            },
+            {
+                number: "2",
+                title: "Connect it to the page.",
+                body: [
+                    "In the head, add a link element that points at styles.css."
+                ]
+            },
+            {
+                number: "3",
+                title: "Try your first rule.",
+                body: [
+                    "Set a background colour on the body, then save and refresh the page."
+                ]
+            }
         ],
         advanced: {
-            title: "Keep the colors in one place",
+            title: "Keep colours in one place",
             body: [
-                "Define custom properties for the background, text, and accent color on the root element.",
-                "Use those variables in the rest of the stylesheet. The example page uses the same hex values as this guide."
+                "Define custom properties for background, text, and accent colours on the root element.",
+                "Use those variables in the rest of the stylesheet so you can adjust the look in one place."
             ]
         }
     },
     {
-        slug: "check-result",
-        title: "Compare with the example",
-        summary: "Check your page against the finished example.",
-        body: [
-            "Open the example website and look for a heading, a short paragraph, and a list of classes.",
-            "Check that the background is warm and the text is dark, with one blue accent.",
-            "This step is a placeholder. The real checklist will replace it later."
+        slug: "copy-the-sketch",
+        title: "Make a copy of the p5.js sketch",
+        summary: "Duplicate the starter file and connect it to the page.",
+        kicker: "Starter file",
+        intro: "Duplicate the starter file and connect it to the page.",
+        variant: "sketch",
+        instructions: []
+    },
+    {
+        slug: "place-the-sketch",
+        title: "Place the sketch",
+        summary: "Add the sketch to the page layout.",
+        kicker: "Build your page",
+        intro: "Add the sketch to the page layout.",
+        variant: "standard",
+        instructions: [
+            {
+                number: "1",
+                title: "Make a space for it.",
+                body: [
+                    "Add a section element underneath your page instructions."
+                ]
+            },
+            {
+                number: "2",
+                title: "Add the sketch.",
+                body: [
+                    "Paste the embed code from your p5.js copy into that section."
+                ]
+            },
+            {
+                number: "3",
+                title: "Check its size.",
+                body: [
+                    "Refresh the page and make sure the sketch fits without covering your words."
+                ]
+            }
+        ]
+    },
+    {
+        slug: "style-the-page",
+        title: "Style the page",
+        summary: "Match spacing, type, and color to the example.",
+        kicker: "Build your page",
+        intro: "Match spacing, type, and color to the example.",
+        variant: "standard",
+        instructions: [
+            {
+                number: "1",
+                title: "Start with the page.",
+                body: [
+                    "Give the page a comfortable width and add space around the edges."
+                ]
+            },
+            {
+                number: "2",
+                title: "Style the words.",
+                body: [
+                    "Choose a clear typeface, then set the heading and paragraph sizes."
+                ]
+            },
+            {
+                number: "3",
+                title: "Finish the details.",
+                body: [
+                    "Add colour and spacing until your page feels close to the finished example."
+                ]
+            }
+        ]
+    },
+    {
+        slug: "check-your-page",
+        title: "Check your page",
+        summary: "Compare what you built with the example.",
+        kicker: "Build your page",
+        intro: "Compare what you built with the example.",
+        variant: "standard",
+        instructions: [
+            {
+                number: "1",
+                title: "Open both pages.",
+                body: [
+                    "Put your version beside the finished Meme-ify app."
+                ]
+            },
+            {
+                number: "2",
+                title: "Compare one thing at a time.",
+                body: [
+                    "Check the words, spacing, colours, and sketch placement in that order."
+                ]
+            },
+            {
+                number: "3",
+                title: "Fix the biggest difference.",
+                body: [
+                    "Choose one useful improvement, make it, then check both pages again."
+                ]
+            }
         ],
         advanced: {
-            title: "Compare colors in the browser",
+            title: "Compare colours in the browser",
             body: [
-                "Right-click the example page and inspect the body. The computed background should be #f6f4ef and the text #1c1917.",
-                "The accent used for links is #1d4ed8. Those values live in both stylesheets so the guide and the example stay matched."
+                "Right-click the example page and inspect key elements. Note background, text, and accent colours.",
+                "Adjust your stylesheet until your page feels close, one property at a time."
             ]
         }
+    },
+    {
+        slug: "keep-going",
+        title: "Keep going",
+        summary: "What to try after the workshop.",
+        kicker: "Finish & explore",
+        intro: "What to try after the workshop.",
+        variant: "finish",
+        instructions: []
     }
 ];
 function getStepNavigation(slug) {

@@ -1,80 +1,175 @@
 import Link from "next/link";
 import { steps } from "@/content/steps";
+import { EXAMPLE_PATH, SKETCH_URL } from "@/lib/workshop-urls";
+import { Arrow, ExternalIcon } from "@/components/workshop/icons";
 
 export default function Home() {
+  const total = steps.length;
+  const firstStep = steps[0];
+
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-4 px-4 py-8 sm:gap-5 sm:px-6 sm:py-12">
-      <div className="grid gap-4 sm:grid-cols-12 sm:gap-5">
-        <section className="flex min-h-[220px] flex-col justify-end rounded-3xl bg-primary p-6 text-primary-foreground sm:col-span-7 sm:min-h-[280px] sm:p-8 lg:min-h-[320px]">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-80">
-            Student workshop
-          </p>
-          <h1 className="mt-3 max-w-xl text-3xl font-bold leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl">
-            Build a page with HTML and CSS
-          </h1>
-        </section>
-
-        <section className="relative flex min-h-[180px] flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card p-6 sm:col-span-5 sm:min-h-[280px] sm:p-8">
-          <span className="inline-flex w-fit rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground">
-            Welcome
-          </span>
-          <p className="max-w-sm text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
-            Work through a short guide, one step at a time. Each step has its own
-            page. An advanced approach is tucked away if you want it.
-          </p>
-        </section>
-
-        <section className="flex min-h-[160px] flex-col justify-end rounded-3xl border border-border bg-card p-6 sm:col-span-4 sm:min-h-[200px] sm:p-8">
-          <p className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-            {steps.length}
-          </p>
-          <p className="mt-1 text-sm text-muted-foreground">Steps in the guide</p>
-          <p className="mt-4 text-sm leading-6 text-muted-foreground">
-            One page per step, with progress and previous/next links.
-          </p>
-        </section>
-
-        <Link
-          href="/guide"
-          className="group flex min-h-[160px] flex-col justify-between rounded-3xl bg-primary p-6 text-primary-foreground transition-opacity hover:opacity-95 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 sm:col-span-8 sm:min-h-[200px] sm:p-8"
-        >
-          <div className="flex flex-wrap gap-2">
-            <span className="rounded-full border border-primary-foreground/25 px-3 py-1 text-xs font-medium">
-              Step-by-step
-            </span>
-            <span className="rounded-full border border-primary-foreground/25 px-3 py-1 text-xs font-medium">
-              HTML & CSS basics
-            </span>
+    <main className="home">
+      <section className="hero">
+        <div className="hero-copy">
+          <div className="eyebrow">
+            <span /> Student workshop
           </div>
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <p className="font-heading text-2xl font-bold tracking-tight sm:text-3xl">
-                Start the guide
-              </p>
-              <p className="mt-2 max-w-md text-sm leading-6 opacity-90">
-                Open the first step and build your page as you go.
+          <h1>Code a meme creation app</h1>
+          <p className="hero-intro">
+            A practical introduction to HTML, CSS and a little JavaScript —
+            built to follow during today’s session and return to whenever you
+            need it.
+          </p>
+          <div className="hero-meta">
+            <span>
+              <b>{total}</b> guided steps
+            </span>
+            <span>
+              <b>≈2</b> hours in class
+            </span>
+            <span>Available after the session</span>
+          </div>
+        </div>
+
+        <div className="home-cards">
+          <a
+            className="home-card example-card"
+            href={EXAMPLE_PATH}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="card-topline">
+              <span>
+                <b>01</b> See where you’re heading
+              </span>
+              <em>
+                Open site <ExternalIcon />
+              </em>
+            </div>
+            <div
+              className="example-placeholder"
+              aria-label="Placeholder preview of the finished Meme-ify website"
+            >
+              <div className="placeholder-browser">
+                <div className="placeholder-bar">
+                  <i />
+                  <i />
+                  <i />
+                </div>
+                <div className="placeholder-meme">
+                  <span>YOUR MEME</span>
+                  <div>
+                    IMAGE
+                    <br />
+                    PREVIEW
+                  </div>
+                  <b>GOES HERE</b>
+                </div>
+              </div>
+            </div>
+            <div className="card-caption">
+              <div>
+                <span>Finished example</span>
+                <h2>Explore Meme-ify</h2>
+              </div>
+              <p>
+                See the page you’ll build and compare your work with it at any
+                point.
               </p>
             </div>
-            <span
-              aria-hidden
-              className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary-foreground text-2xl text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            >
-              ↗
-            </span>
-          </div>
-        </Link>
-      </div>
+          </a>
 
-      <p className="text-center text-sm text-muted-foreground">
-        Need a finished page to compare against?{" "}
-        <Link
-          href="/example/"
-          className="font-medium text-primary underline-offset-4 hover:underline"
-        >
-          Open the example
-        </Link>{" "}
-        anytime from here or the header.
-      </p>
+          <Link className="home-card guide-card" href={`/guide/${firstStep.slug}`}>
+            <div className="card-topline">
+              <span>
+                <b>02</b> Build it step by step
+              </span>
+              <em>
+                Start guide <Arrow />
+              </em>
+            </div>
+            <div className="guide-preview">
+              <div className="mini-rail">
+                <small>WORKSHOP STEPS</small>
+                {[1, 2, 3, 4, 5].map((number) => (
+                  <i className={number === 1 ? "active" : undefined} key={number}>
+                    {number}
+                    <span />
+                  </i>
+                ))}
+              </div>
+              <div className="mini-lesson">
+                <span>
+                  STEP 1 OF {total}
+                </span>
+                <div className="mini-progress">
+                  <i />
+                </div>
+                <h3>
+                  Set up
+                  <br />
+                  the page
+                </h3>
+                <p>Create the file every web page starts with.</p>
+                <div className="mini-code">
+                  &lt;!doctype html&gt;
+                  <br />
+                  &lt;html lang=&quot;en&quot;&gt;
+                </div>
+              </div>
+            </div>
+            <div className="card-caption">
+              <div>
+                <span>Eight clear steps</span>
+                <h2>Follow the guide</h2>
+              </div>
+              <p>
+                Use it beside your editor today, then jump back to any step
+                after the session.
+              </p>
+            </div>
+          </Link>
+        </div>
+
+        <div className="workshop-note">
+          <span>How we’ll work</span>
+          <p>
+            We’ll write the page in our code editor and use the online{" "}
+            <b>p5.js editor</b> for the interactive sketch. The guide stays
+            online, so you can revisit the instructions and optional advanced
+            sections later.
+          </p>
+          <a href={SKETCH_URL} target="_blank" rel="noreferrer">
+            Visit the p5.js editor <ExternalIcon />
+          </a>
+        </div>
+      </section>
+
+      <section className="resource-strip">
+        <div className="resource-note">
+          <span>Two useful links</span>
+          <p>
+            The example is your goal. You’ll copy the starter sketch during step
+            4.
+          </p>
+        </div>
+        <a className="resource-link" href={EXAMPLE_PATH} target="_blank" rel="noreferrer">
+          <span className="resource-number">01</span>
+          <span>
+            <b>Open the finished app</b>
+            <small>Compare your work at any time</small>
+          </span>
+          <ExternalIcon />
+        </a>
+        <a className="resource-link" href={SKETCH_URL} target="_blank" rel="noreferrer">
+          <span className="resource-number">02</span>
+          <span>
+            <b>Open the p5.js sketch</b>
+            <small>Starter file to copy in step 4</small>
+          </span>
+          <ExternalIcon />
+        </a>
+      </section>
     </main>
   );
 }

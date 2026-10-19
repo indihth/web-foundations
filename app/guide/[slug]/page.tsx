@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AdvancedApproach } from "@/components/advanced-approach";
-import { GuideProgress } from "@/components/guide-progress";
-import { StepNav } from "@/components/step-nav";
+import { AdvancedSection } from "@/components/workshop/advanced-section";
+import { Arrow } from "@/components/workshop/icons";
+import { LessonHeading } from "@/components/workshop/lesson-heading";
+import { LessonInstructions } from "@/components/workshop/lesson-instructions";
 import { getStepNavigation, steps } from "@/content/steps";
 
 export const instant = false;
@@ -39,34 +41,64 @@ export default async function GuideStepPage({
   }
 
   const { step, number, total, previous, next } = navigation;
+  const progress = Math.round((number / total) * 100);
 
   return (
-    <article className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-4 py-8 sm:py-12">
-      <GuideProgress number={number} total={total} />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tight">{step.title}</h1>
-        <p className="text-lg leading-7 text-muted-foreground">{step.summary}</p>
-      </header>
-      <div className="space-y-4 text-base leading-7">
-        {step.body.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+    <article className="lesson">
+      <div
+        className="progress-line"
+        role="progressbar"
+        aria-valuenow={progress}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuetext={`Step ${number} of ${total}`}
+      >
+        <span>
+          Step {number} of {total}
+        </span>
+        <div>
+          <i style={{ width: `${progress}%` }} />
+        </div>
+        <b>{progress}%</b>
       </div>
-      {step.advanced ? (
-        <AdvancedApproach title={step.advanced.title} body={step.advanced.body} />
-      ) : null}
-      <StepNav
-        previous={
-          previous
-            ? { href: `/guide/${previous.slug}`, label: "Previous" }
-            : null
-        }
-        next={
-          next
-            ? { href: `/guide/${next.slug}`, label: "Next" }
-            : { href: "/", label: "Back to home" }
-        }
-      />
+      <LessonHeading kicker={step.kicker} title={step.title} intro={step.intro} />
+      <div className="instructions">
+        <LessonInstructions step={step} />
+      </div>
+      {step.advanced ? <AdvancedSection advanced={step.advanced} /> : null}
+      <nav className="lesson-navigation" aria-label="Lesson navigation">
+        {previous ? (
+          <Link
+            className="previous"
+            href={`/guide/${previous.slug}`}
+          >
+            <Arrow direction="left" />
+            <span>
+              <small>Step {number - 1}</small>
+              Previous
+            </span>
+          </Link>
+        ) : (
+          <span />
+        )}
+        {next ? (
+          <Link className="next" href={`/guide/${next.slug}`}>
+            <span>
+              <small>Step {number + 1}</small>
+              Next
+            </span>
+            <Arrow />
+          </Link>
+        ) : (
+          <Link className="next" href="/">
+            <span>
+              <small>You’re finished</small>
+              Back to home
+            </span>
+            <Arrow />
+          </Link>
+        )}
+      </nav>
     </article>
   );
 }

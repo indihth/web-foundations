@@ -98,6 +98,11 @@
     }
 
     *, :before, :after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-leading: initial;
@@ -469,6 +474,10 @@
     visibility: visible;
   }
 
+  .fixed {
+    position: fixed;
+  }
+
   .relative {
     position: relative;
   }
@@ -515,6 +524,10 @@
 
   .hidden {
     display: none;
+  }
+
+  .inline {
+    display: inline;
   }
 
   .inline-flex {
@@ -632,6 +645,10 @@
 
   .shrink-0 {
     flex-shrink: 0;
+  }
+
+  .transform {
+    transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
   }
 
   .flex-col {
@@ -980,6 +997,10 @@
 
   .text-secondary-foreground {
     color: var(--secondary-foreground);
+  }
+
+  .lowercase {
+    text-transform: lowercase;
   }
 
   .uppercase {
@@ -1730,6 +1751,31 @@
     --sidebar-border: lab(100% 0 0 / .1);
     --sidebar-ring: lab(48.496% 0 0);
   }
+}
+
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false
+}
+
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false
 }
 
 @property --tw-space-y-reverse {

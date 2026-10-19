@@ -1,38 +1,44 @@
 1:"$Sreact.fragment"
-2:"/_next/static/chunks/24tbtxd03iis7.js"
-3:I[22016,["$2"],""]
-4:I[27930,["$2"],"Button"]
-5:I[39756,["$2"],"default"]
-6:I[37457,["$2"],"default"]
-f:I[97367,["$2"],"OutletBoundary"]
-10:"$Sreact.suspense"
-14:"ViewportBoundary"
-15:I[97367,["$2"],"$14"]
-16:"MetadataBoundary"
-17:I[97367,["$2"],"$16"]
-18:I[27201,["$2"],"IconMark"]
-:HL["/_next/static/chunks/1o96og3rxz18c.css","style"]
+2:"/_next/static/chunks/0cgxx2udd1w4r.js"
+3:I[5685,["$2"],"SiteHeader"]
+4:I[39756,["$2"],"default"]
+5:I[37457,["$2"],"default"]
+d:I[22016,["$2"],""]
+17:"ViewportBoundary"
+18:I[97367,["$2"],"$17"]
+19:"MetadataBoundary"
+1a:I[97367,["$2"],"$19"]
+1b:"$Sreact.suspense"
+1c:I[27201,["$2"],"IconMark"]
+:HL["/_next/static/chunks/0b434495ru0_7.css","style"]
+7:X
+7:C
 8:X
+8:300
 8:C
-9:X
-9:300
-9:C
-c:X
-c:C
-13:X
-13:C
-d:[["children",{"s":"__PAGE__","h":57506,"d":{"r":["$","$1","c",{"children":["$Le",null,["$","$Lf",null,{"children":["$","$10",null,{"name":"Next.MetadataOutlet","children":"$@11"}]}]]}],"p":"$@12","v":"$13","s":"$9"}}]]
-a:[["children",{"s":"guide","h":57442,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@b","v":"$c","s":"$9"},"c":"$Qd"}]]
-1a:X
-1a:C
-1d:X
-1d:C
-0:{"t":{"t":{"s":"","h":57426,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1o96og3rxz18c.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/24tbtxd03iis7.js","async":true}]],["$","html",null,{"lang":"en","className":"B_rulq_variable YuBn5q_variable h-full antialiased","children":["$","body",null,{"className":"flex min-h-full flex-col","children":[["$","header",null,{"className":"border-b border-border bg-background","children":["$","div",null,{"className":"mx-auto flex h-16 w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-4 sm:px-6","children":[["$","$L3",null,{"href":"/","className":"font-heading text-lg font-semibold tracking-tight text-foreground","children":"HTML & CSS Workshop"}],["$","nav",null,{"aria-label":"Main","className":"flex flex-1 flex-wrap items-center justify-center gap-6 sm:justify-end sm:gap-8","children":[[["$","$L3","/",{"href":"/","className":"text-sm text-muted-foreground transition-colors hover:text-foreground","children":"Home"}],["$","$L3","/guide",{"href":"/guide","className":"text-sm text-muted-foreground transition-colors hover:text-foreground","children":"Guide"}],["$","$L3","/example/",{"href":"/example/","className":"text-sm text-muted-foreground transition-colors hover:text-foreground","children":"Example"}]],["$","$L4",null,{"data-slot":"button","className":"group/button inline-flex shrink-0 items-center justify-center border border-transparent bg-clip-padding whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-primary/80 gap-1.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 h-10 rounded-full px-5 text-sm font-semibold","nativeButton":false,"render":["$","$L3",null,{"href":"/guide"}],"children":"Start the guide"}]]}]]}]}],["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]]}]}]]}],"p":"$@7","v":"$8","s":"$9"},"c":"$Qa"},"h":{"r":["$","$1","h",{"children":[null,["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L17",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$10",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"HTML & CSS Workshop"}],["$","meta","1",{"name":"description","content":"A step-by-step guide for a student workshop on basic HTML and CSS."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L18","3",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@19","v":"$1a","s":"$9"}},"a":"$@1b","u":"$@1c","b":"0mCSA9U7h-qFW9VpIgtxv","r":"$1d"}
-e:E{"digest":"NEXT_REDIRECT;replace;/guide/page-structure;307;"}
-11:null
-1c:false
-1b:null
-b:"$undefined"
-7:"$undefined"
-19:"$undefined"
-12:"$undefined"
+b:X
+b:C
+16:X
+16:C
+c:[["children",{"s":"__PAGE__","h":57506,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"className":"guide-index","children":[["$","div",null,{"className":"page-heading","children":[["$","div",null,{"children":[["$","div",null,{"className":"eyebrow","children":[["$","span",null,{}]," Workshop guide"]}],["$","h1",null,{"children":["Eight steps, one",["$","br",null,{}],"working web page."]}]]}],["$","p",null,{"children":"Start at the beginning or jump back into any step. Advanced sections are optional and can be saved for later."}]]}],["$","div",null,{"className":"step-table","children":[["$","div",null,{"className":"table-label","children":[["$","span",null,{"children":"Steps"}],["$","span",null,{"children":[8," lessons · about 2 hours"]}]]}],[["$","$Ld","set-up-the-page",{"className":"step-row","href":"/guide/set-up-the-page","children":[["$","span",null,{"className":"step-number","children":"01"}],["$","span",null,{"className":"step-row-copy","children":[["$","b",null,{"children":"Set up the page"}],["$","small",null,{"children":"Create index.html and the basic document."}]]}],["$","span",null,{"className":"advanced-pill","children":"Advanced"}],["$","span",null,{"className":"row-arrow","children":["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M4 10h12M11 5l5 5-5 5","stroke":"currentColor","strokeWidth":"1.8"}]}]}]]}],["$","$Ld","add-the-words",{"className":"step-row","href":"/guide/add-the-words","children":[["$","span",null,{"className":"step-number","children":"02"}],["$","span",null,{"className":"step-row-copy","children":[["$","b",null,{"children":"Add the words"}],["$","small",null,{"children":"Put the page content in before any styling."}]]}],["$","span",null,{"className":"advanced-pill","children":"Advanced"}],["$","span",null,{"className":"row-arrow","children":["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M4 10h12M11 5l5 5-5 5","stroke":"currentColor","strokeWidth":"1.8"}]}]}]]}],["$","$Ld","add-a-stylesheet",{"className":"step-row","href":"/guide/add-a-stylesheet","children":[["$","span",null,{"className":"step-number","children":"03"}],["$","span",null,{"className":"step-row-copy","children":[["$","b",null,{"children":"Add a stylesheet"}],["$","small",null,{"children":"Link a CSS file and set color and type."}]]}],["$","span",null,{"className":"advanced-pill","children":"Advanced"}],["$","span",null,{"className":"row-arrow","children":["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M4 10h12M11 5l5 5-5 5","stroke":"currentColor","strokeWidth":"1.8"}]}]}]]}],["$","$Ld","copy-the-sketch",{"className":"step-row","href":"/guide/copy-the-sketch","children":[["$","span",null,{"className":"step-number","children":"04"}],["$","span",null,{"className":"step-row-copy","children":[["$","b",null,{"children":"Make a copy of the p5.js sketch"}],["$","small",null,{"children":"Duplicate the starter file and connect it to the page."}]]}],null,"$Le"]}],"$Lf","$L10","$L11","$L12"]]}],"$L13"]}],null,"$L14"]}],"p":"$@15","v":"$16","s":"$8"}}]]
+9:[["children",{"s":"guide","h":57442,"d":{"r":["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}]}]]}],"p":"$@a","v":"$b","s":"$8"},"c":"$Qc"}]]
+1e:X
+1e:C
+21:X
+21:C
+0:{"t":{"t":{"s":"","h":57426,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0b434495ru0_7.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/0cgxx2udd1w4r.js","async":true}]],["$","html",null,{"lang":"en","className":"HIT9Bq_variable D4oVwa_variable","children":["$","body",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]]}]}]]}],"p":"$@6","v":"$7","s":"$8"},"c":"$Q9"},"h":{"r":["$","$1","h",{"children":[null,["$","$L18",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1a",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$1b",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Workshop guide · IADT Computing"}],["$","meta","1",{"name":"description","content":"A step-by-step workshop guide for building a meme creation app with HTML, CSS, and p5.js."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L1c","3",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@1d","v":"$1e","s":"$8"}},"a":"$@1f","u":"$@20","b":"dkn5LZMzcDeUNSFSN4rzG","r":"$21"}
+22:I[97367,["$2"],"OutletBoundary"]
+e:["$","span",null,{"className":"row-arrow","children":["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M4 10h12M11 5l5 5-5 5","stroke":"currentColor","strokeWidth":"1.8"}]}]}]
+f:["$","$Ld","place-the-sketch",{"className":"step-row","href":"/guide/place-the-sketch","children":[["$","span",null,{"className":"step-number","children":"05"}],["$","span",null,{"className":"step-row-copy","children":[["$","b",null,{"children":"Place the sketch"}],["$","small",null,{"children":"Add the sketch to the page layout."}]]}],null,["$","span",null,{"className":"row-arrow","children":["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M4 10h12M11 5l5 5-5 5","stroke":"currentColor","strokeWidth":"1.8"}]}]}]]}]
+10:["$","$Ld","style-the-page",{"className":"step-row","href":"/guide/style-the-page","children":[["$","span",null,{"className":"step-number","children":"06"}],["$","span",null,{"className":"step-row-copy","children":[["$","b",null,{"children":"Style the page"}],["$","small",null,{"children":"Match spacing, type, and color to the example."}]]}],null,["$","span",null,{"className":"row-arrow","children":["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M4 10h12M11 5l5 5-5 5","stroke":"currentColor","strokeWidth":"1.8"}]}]}]]}]
+11:["$","$Ld","check-your-page",{"className":"step-row","href":"/guide/check-your-page","children":[["$","span",null,{"className":"step-number","children":"07"}],["$","span",null,{"className":"step-row-copy","children":[["$","b",null,{"children":"Check your page"}],["$","small",null,{"children":"Compare what you built with the example."}]]}],["$","span",null,{"className":"advanced-pill","children":"Advanced"}],["$","span",null,{"className":"row-arrow","children":["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M4 10h12M11 5l5 5-5 5","stroke":"currentColor","strokeWidth":"1.8"}]}]}]]}]
+12:["$","$Ld","keep-going",{"className":"step-row","href":"/guide/keep-going","children":[["$","span",null,{"className":"step-number","children":"08"}],["$","span",null,{"className":"step-row-copy","children":[["$","b",null,{"children":"Keep going"}],["$","small",null,{"children":"What to try after the workshop."}]]}],null,["$","span",null,{"className":"row-arrow","children":["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M4 10h12M11 5l5 5-5 5","stroke":"currentColor","strokeWidth":"1.8"}]}]}]]}]
+13:["$","div",null,{"className":"guide-resources","children":[["$","span",null,{"children":"Keep these nearby"}],["$","a",null,{"href":"/example/","target":"_blank","rel":"noreferrer","children":["Finished app ",["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M8 5H5v10h10v-3M11 5h4v4M9 11l6-6","stroke":"currentColor","strokeWidth":"1.6"}]}]]}],["$","a",null,{"href":"https://editor.p5js.org/","target":"_blank","rel":"noreferrer","children":["p5.js starter file ",["$","svg",null,{"aria-hidden":"true","viewBox":"0 0 20 20","fill":"none","children":["$","path",null,{"d":"M8 5H5v10h10v-3M11 5h4v4M9 11l6-6","stroke":"currentColor","strokeWidth":"1.6"}]}]]}]]}]
+14:["$","$L22",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@23"}]}]
+20:false
+23:null
+1f:null
+a:"$undefined"
+6:"$undefined"
+1d:"$undefined"
+15:"$undefined"

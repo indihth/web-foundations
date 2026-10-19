@@ -4,7 +4,7 @@
 type AppRoutes = "/" | "/guide" | "/guide/[slug]"
 type AppRouteHandlerRoutes = "/favicon.ico"
 type PageRoutes = never
-type LayoutRoutes = "/"
+type LayoutRoutes = "/" | "/guide/[slug]"
 type RedirectRoutes = never
 type RewriteRoutes = "/example" | "/example/"
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes | AppRouteHandlerRoutes
@@ -24,6 +24,7 @@ export type ParamsOf<Route extends Routes> = ParamMap[Route]
 
 interface LayoutSlotMap {
   "/": never
+  "/guide/[slug]": never
 }
 
 
