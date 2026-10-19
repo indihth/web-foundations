@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Alex Rivera</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a href="/">HTML & CSS Workshop</a>
-    </header>
-    <main class="page">
-      <p class="kicker">Example website</p>
-      <article class="profile">
-        <header>
-          <h1>Alex Rivera</h1>
-        </header>
-        <p>I am learning HTML and CSS in this workshop.</p>
-        <ul class="classes">
-          <li>HTML basics</li>
-          <li>CSS colors</li>
-          <li>Checking my page</li>
-        </ul>
-      </article>
-      <p class="note">
-        Placeholder page. The real example will replace this later. View the
-        source of this file to see the HTML.
-      </p>
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memeo – Meme Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/example/styles.css">
+</head>
+<body>
+
+  <p class="banner">Memeo is <u>free</u>, no sign-up, and runs entirely in your browser.</p>
+
+  <header>
+    <div class="logo">memeo</div>
+    <div class="pill">Meme Generator</div>
+  </header>
+
+  <section class="hero">
+    <h1>Make it</h1>
+    <h1 class="hero-right">a m<span>!</span>me.</h1>
+    <p class="hero-note"><span class="brace">{</span> Upload a picture, add your words, share the joke. <span class="brace">}</span></p>
+  </section>
+
+  <main>
+    <section class="card">
+      <label class="upload">
+        <input id="photo" type="file" accept="image/*">
+        Upload image ↑
+      </label>
+
+      <label for="top">Top text</label>
+      <input id="top" type="text" placeholder="When the code finally runs">
+
+      <label for="bottom">Bottom text</label>
+      <input id="bottom" type="text" placeholder="And you still do not know why">
+
+      <label id="sizeLabel" for="size">Text size · 9</label>
+      <input id="size" type="range" min="5" max="16" value="9">
+    </section>
+
+    <section class="card">
+      <p class="label">Preview</p>
+
+      <div class="preview">
+        <p id="empty" class="empty">No image yet. Upload one and your meme shows up here.</p>
+        <img id="preview" alt="Your meme" hidden>
+        <p id="meme-top" class="meme-top"></p>
+        <p id="meme-bottom" class="meme-bottom"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/example/script.js"></script>
+</body>
 </html>

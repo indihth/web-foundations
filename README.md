@@ -1,6 +1,6 @@
 # HTML & CSS Workshop 
 
-A small site for a student workshop on basic HTML and CSS. The homepage links to a finished example page, then to a step-by-step guide. Each guide step is its own page, with a progress bar, previous and next links, and an optional advanced approach.
+A small site for a student workshop on basic HTML and CSS. The homepage starts the step-by-step guide and links to a finished example page as a reference. Each guide step is its own page, with a progress bar, previous and next links, and an optional advanced approach.
 
 The lesson text is placeholder copy. Replace it in [`content/steps.ts`](content/steps.ts). The example page lives in [`public/example/`](public/example/) as plain HTML and CSS so students can view the source.
 
@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 - Guide steps: [`content/steps.ts`](content/steps.ts). Slugs become the page URLs (`/guide/page-structure`).
 - Guide look: the `--workshop-*` tokens in [`app/globals.css`](app/globals.css).
-- Example page: [`public/example/index.html`](public/example/index.html) and [`public/example/styles.css`](public/example/styles.css). Repeat the same token values in both stylesheets when the design changes.
+- Example page: [`public/example/index.html`](public/example/index.html) and [`public/example/styles.css`](public/example/styles.css). It uses its own look, separate from the guide theme in `app/globals.css`.
 
 ## Deploy on Vercel
 

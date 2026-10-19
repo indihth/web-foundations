@@ -1,6 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": []
-}
+{"version":4,"routes":{"/guide/[slug]":{},"/guide/page-structure":{},"/guide/add-content":{},"/guide/add-styles":{},"/guide/check-result":{}},"dynamicRoutes":{"/guide/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":"/guide/[slug]/page","fallbackRevalidate":false,"fallbackRootParams":[],"fallbackRouteParams":[{"paramName":"slug","paramType":"dynamic"}],"fallbackSourceRoute":"/guide/[slug]","routeRegex":"^\\/guide\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[]}

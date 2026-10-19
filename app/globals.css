@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans), "Segoe UI", sans-serif;
+  --font-sans: var(--font-dm-sans), "Segoe UI", sans-serif;
   --font-mono: ui-monospace, monospace;
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-plus-jakarta), var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,15 +49,16 @@
 }
 
 :root {
-  /* Workshop theme. Repeat these values in public/example/styles.css. */
-  --workshop-bg: #f6f4ef;
-  --workshop-ink: #1c1917;
-  --workshop-accent: #1d4ed8;
-  --workshop-accent-ink: #ffffff;
-  --workshop-muted: #e7e2d9;
-  --workshop-muted-ink: #57534e;
-  --workshop-card: #ffffff;
-  --workshop-line: #d6d3d1;
+  /* Workshop guide theme (dark + mint). Example page keeps its own styles. */
+  --workshop-bg: #18191b;
+  --workshop-ink: #f7f7f5;
+  --workshop-accent: #9cf8f3;
+  --workshop-accent-ink: #18191b;
+  --workshop-muted: #111113;
+  --workshop-muted-ink: #ababab;
+  --workshop-card: #111113;
+  --workshop-line: #2a2a2e;
+  --workshop-highlight: #eefefd;
 
   --background: var(--workshop-bg);
   --foreground: var(--workshop-ink);
@@ -71,8 +72,8 @@
   --secondary-foreground: var(--workshop-ink);
   --muted: var(--workshop-muted);
   --muted-foreground: var(--workshop-muted-ink);
-  --accent: var(--workshop-muted);
-  --accent-foreground: var(--workshop-ink);
+  --accent: var(--workshop-highlight);
+  --accent-foreground: var(--workshop-accent-ink);
   --destructive: oklch(0.577 0.245 27.325);
   --border: var(--workshop-line);
   --input: var(--workshop-line);
@@ -82,7 +83,7 @@
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
+  --radius: 1rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -136,5 +137,13 @@
   }
   html {
     @apply font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
   }
 }
