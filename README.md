@@ -1,4 +1,4 @@
-# HTML & CSS Workshop
+# HTML & CSS Workshop 
 
 A small site for a student workshop on basic HTML and CSS. The homepage links to a finished example page, then to a step-by-step guide. Each guide step is its own page, with a progress bar, previous and next links, and an optional advanced approach.
 
