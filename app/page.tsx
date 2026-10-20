@@ -108,13 +108,13 @@ export default function Home() {
                 <h3>
                   Set up
                   <br />
-                  the page
+                  p5.js
                 </h3>
-                <p>Create the file every web page starts with.</p>
+                <p>Create an account and save a copy of the template.</p>
                 <div className="mini-code">
-                  &lt;!doctype html&gt;
+                  File → Save
                   <br />
-                  &lt;html lang=&quot;en&quot;&gt;
+                  template sketch
                 </div>
               </div>
             </div>
@@ -149,8 +149,8 @@ export default function Home() {
         <div className="resource-note">
           <span>Two useful links</span>
           <p>
-            The example is your goal. You’ll copy the starter sketch during step
-            4.
+            The example is your goal. You’ll save a copy of the template in step
+            1.
           </p>
         </div>
         <a className="resource-link" href={EXAMPLE_PATH} target="_blank" rel="noreferrer">
@@ -165,7 +165,7 @@ export default function Home() {
           <span className="resource-number">02</span>
           <span>
             <b>Open the p5.js sketch</b>
-            <small>Starter file to copy in step 4</small>
+            <small>Workshop template to copy in step 1</small>
           </span>
           <ExternalIcon />
         </a>

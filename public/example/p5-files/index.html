@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Giving the site a name, appears in tab -->
+  <title>Memeo – Meme Generator</title>
+
+  
+  <!-- Linking fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap" rel="stylesheet">
+  
+
+  <!-- Linking the styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+  <!-- Everything below here will be what you see on your site -->
+
+  <body>
+
+  <p class="banner">Memeo is <u>free</u>, no sign-up, and runs entirely in your browser.</p>
+
+  <header>
+    <div class="">memeo</div>
+    <div class="">Meme Generator</div>
+  </header>
+
+  <section class="">
+    <h1>Make it</h1>
+    <h1 class="hero-right">a m<span>!</span>me.</h1>
+    <p class="hero-note"><span class="brace">{</span> Upload a picture, add your words, share the joke. <span class="brace">}</span></p>
+  </section>
+
+  <main>
+    <section class="card">
+      <label class="upload">
+        <input id="photo" type="file" accept="image/*">
+        Upload image ↑
+      </label>
+
+      <label for="top">Top text</label>
+      <input id="top" type="text" placeholder="When the code finally runs">
+
+      <label for="bottom">Bottom text</label>
+      <input id="bottom" type="text" placeholder="And you still do not know why">
+
+      <label id="sizeLabel" for="size">Text size · 9</label>
+      <input id="size" type="range" min="5" max="16" value="9">
+    </section>
+
+    <section class="card">
+      <p class="label">Preview</p>
+
+      <div class="preview">
+        <p id="empty" class="empty">No image yet. Upload one and your meme shows up here.</p>
+        <img id="preview" alt="Your meme" hidden>
+        <p id="meme-top" class="meme-top"></p>
+        <p id="meme-bottom" class="meme-bottom"></p>
+      </div>
+    </section>
+  </main>
+
+
+    <!-- these script tags load in javascript code </-->
+    <!-- It's done at the bottom of the page, loading it after the page content. This helps with loading the site quickly  -->
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="helpers.js"></script>
+  <script src="sketch.js"></script>
+
+    
+</body>
+</html>

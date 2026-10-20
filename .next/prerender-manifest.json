@@ -6,7 +6,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 18158,
+      "htmlSize": 18300,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -148,7 +148,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 19698,
+      "htmlSize": 19765,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -184,7 +184,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 16130,
+      "htmlSize": 16131,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -220,7 +220,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 16180,
+      "htmlSize": 16179,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -256,7 +256,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 16166,
+      "htmlSize": 16165,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -287,48 +287,12 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/guide/copy-the-sketch": {
-      "renderingMode": "PARTIALLY_STATIC",
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 17433,
-      "experimentalPPR": true,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        },
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/guide/[slug]",
-      "dataRoute": "/guide/copy-the-sketch.rsc",
-      "prefetchDataRoute": "/guide/copy-the-sketch.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/guide/keep-going": {
       "renderingMode": "PARTIALLY_STATIC",
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 17016,
+      "htmlSize": 17047,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -364,7 +328,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 15622,
+      "htmlSize": 15734,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -395,12 +359,48 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/guide/set-up-p5": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 17834,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/guide/[slug]",
+      "dataRoute": "/guide/set-up-p5.rsc",
+      "prefetchDataRoute": "/guide/set-up-p5.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/guide/set-up-the-page": {
       "renderingMode": "PARTIALLY_STATIC",
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 16997,
+      "htmlSize": 17632,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -436,7 +436,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 15696,
+      "htmlSize": 15695,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {

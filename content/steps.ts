@@ -3,6 +3,11 @@ export type InstructionBlock = {
   title: string;
   body: string[];
   tip?: string;
+  link?: {
+    href: string;
+    label: string;
+    note?: string;
+  };
 };
 
 export type AdvancedBlock = {
@@ -11,7 +16,7 @@ export type AdvancedBlock = {
   code?: string;
 };
 
-export type StepVariant = "setup" | "standard" | "sketch" | "finish";
+export type StepVariant = "setup" | "standard" | "finish";
 
 export type Step = {
   slug: string;
@@ -24,7 +29,51 @@ export type Step = {
   advanced?: AdvancedBlock;
 };
 
+import { P5_SIGNUP_URL, SKETCH_URL } from "@/lib/workshop-urls";
+
 export const steps: Step[] = [
+  {
+    slug: "set-up-p5",
+    title: "Set up p5.js",
+    summary: "Create an account, save a copy of the template, and explore the files.",
+    kicker: "Starter file",
+    intro:
+      "Create a p5.js account, save your own copy of the workshop template, and get familiar with the editor before you build the page.",
+    variant: "standard",
+    instructions: [
+      {
+        number: "1",
+        title: "Create a p5.js account.",
+        body: [
+          "Sign up for a free account on the p5.js web editor. You do not need to verify your email to use it in class.",
+        ],
+        link: {
+          href: P5_SIGNUP_URL,
+          label: "Open the p5.js sign-up page",
+        },
+        tip: "Write down your username and password so you can log in again at home.",
+      },
+      {
+        number: "2",
+        title: "Save a copy of the template.",
+        body: [
+          "Open the workshop template sketch, then choose File → Save. p5.js saves a copy and adds “Copy” to the name. You can rename the sketch to whatever you like.",
+        ],
+        link: {
+          href: SKETCH_URL,
+          label: "Open the template sketch",
+          note: "You are opening a starter file to copy — not the finished website.",
+        },
+      },
+      {
+        number: "3",
+        title: "Open the file list.",
+        body: [
+          "Expand the file list on the left of the editor so you can see every file in the sketch. Your lecturer will explain what each one does.",
+        ],
+      },
+    ],
+  },
   {
     slug: "set-up-the-page",
     title: "Set up the page",
@@ -137,15 +186,6 @@ export const steps: Step[] = [
     },
   },
   {
-    slug: "copy-the-sketch",
-    title: "Make a copy of the p5.js sketch",
-    summary: "Duplicate the starter file and connect it to the page.",
-    kicker: "Starter file",
-    intro: "Duplicate the starter file and connect it to the page.",
-    variant: "sketch",
-    instructions: [],
-  },
-  {
     slug: "place-the-sketch",
     title: "Place the sketch",
     summary: "Add the sketch to the page layout.",
@@ -164,7 +204,7 @@ export const steps: Step[] = [
         number: "2",
         title: "Add the sketch.",
         body: [
-          "Paste the embed code from your p5.js copy into that section.",
+          "Open the copy you saved in step 1. Paste the embed code from your p5.js sketch into that section.",
         ],
       },
       {

@@ -34,11 +34,11 @@ function applyMemeTextSize(size) {
   let n = Number(size);
   if (!n) n = 9;
 
-  const fontPx = n * 2.2;
+  const fontRem = Math.max(0.875, (n * 2.2) / 16);
   const topLine = document.getElementById("meme-top");
   const bottomLine = document.getElementById("meme-bottom");
-  if (topLine) topLine.style.fontSize = fontPx + "px";
-  if (bottomLine) bottomLine.style.fontSize = fontPx + "px";
+  if (topLine) topLine.style.fontSize = fontRem + "rem";
+  if (bottomLine) bottomLine.style.fontSize = fontRem + "rem";
 
   const label = document.getElementById("sizeLabel");
   if (label) label.textContent = "Text size · " + n;

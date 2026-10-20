@@ -273,7 +273,50 @@ __turbopack_context__.s([
     "steps",
     ()=>steps
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$workshop$2d$urls$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/workshop-urls.ts [app-ssr] (ecmascript)");
+;
 const steps = [
+    {
+        slug: "set-up-p5",
+        title: "Set up p5.js",
+        summary: "Create an account, save a copy of the template, and explore the files.",
+        kicker: "Starter file",
+        intro: "Create a p5.js account, save your own copy of the workshop template, and get familiar with the editor before you build the page.",
+        variant: "standard",
+        instructions: [
+            {
+                number: "1",
+                title: "Create a p5.js account.",
+                body: [
+                    "Sign up for a free account on the p5.js web editor. You do not need to verify your email to use it in class."
+                ],
+                link: {
+                    href: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$workshop$2d$urls$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["P5_SIGNUP_URL"],
+                    label: "Open the p5.js sign-up page"
+                },
+                tip: "Write down your username and password so you can log in again at home."
+            },
+            {
+                number: "2",
+                title: "Save a copy of the template.",
+                body: [
+                    "Open the workshop template sketch, then choose File → Save. p5.js saves a copy and adds “Copy” to the name. You can rename the sketch to whatever you like."
+                ],
+                link: {
+                    href: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$workshop$2d$urls$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SKETCH_URL"],
+                    label: "Open the template sketch",
+                    note: "You are opening a starter file to copy — not the finished website."
+                }
+            },
+            {
+                number: "3",
+                title: "Open the file list.",
+                body: [
+                    "Expand the file list on the left of the editor so you can see every file in the sketch. Your lecturer will explain what each one does."
+                ]
+            }
+        ]
+    },
     {
         slug: "set-up-the-page",
         title: "Set up the page",
@@ -391,15 +434,6 @@ const steps = [
         }
     },
     {
-        slug: "copy-the-sketch",
-        title: "Make a copy of the p5.js sketch",
-        summary: "Duplicate the starter file and connect it to the page.",
-        kicker: "Starter file",
-        intro: "Duplicate the starter file and connect it to the page.",
-        variant: "sketch",
-        instructions: []
-    },
-    {
         slug: "place-the-sketch",
         title: "Place the sketch",
         summary: "Add the sketch to the page layout.",
@@ -418,7 +452,7 @@ const steps = [
                 number: "2",
                 title: "Add the sketch.",
                 body: [
-                    "Paste the embed code from your p5.js copy into that section."
+                    "Open the copy you saved in step 1. Paste the embed code from your p5.js sketch into that section."
                 ]
             },
             {

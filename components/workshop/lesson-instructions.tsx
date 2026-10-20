@@ -1,23 +1,38 @@
-import type { Step } from "@/content/steps";
+import Image from "next/image";
+import { steps, type Step } from "@/content/steps";
+import { loadGuideScreenshot } from "@/lib/guide-screenshots";
 import { EXAMPLE_PATH, SKETCH_URL } from "@/lib/workshop-urls";
 import { CodeBlock } from "./code-block";
 import { ExternalIcon } from "./icons";
 
 function Instruction({
+  stepNumber,
   number,
   title,
   children,
 }: {
+  stepNumber: number;
   number: string;
   title: string;
   children: React.ReactNode;
 }) {
+  const screenshot = loadGuideScreenshot(stepNumber, number);
+
   return (
     <section className="instruction">
       <span className="instruction-number">{number}</span>
       <div>
         <h2>{title}</h2>
         {children}
+        {screenshot ? (
+          <Image
+            className="instruction-screenshot"
+            src={screenshot}
+            alt={title}
+            sizes="(max-width: 720px) 86vw, 640px"
+            style={{ display: "block", width: "100%", height: "auto" }}
+          />
+        ) : null}
       </div>
     </section>
   );
@@ -32,49 +47,31 @@ function Tip({ children }: { children: React.ReactNode }) {
   );
 }
 
-function SketchInstructions() {
+function InstructionLink({
+  href,
+  label,
+  note,
+}: {
+  href: string;
+  label: string;
+  note?: string;
+}) {
   return (
     <>
-      <Instruction number="1" title="Open the starter sketch.">
-        <p>
-          This is the file prepared for the workshop. Open it in p5.js before
-          you continue.
-        </p>
-        <a
-          className="sketch-button"
-          href={SKETCH_URL}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Open the p5.js sketch <ExternalIcon />
-        </a>
-        <small className="under-button">
-          You are opening a starter file to copy — not the finished website.
-        </small>
-      </Instruction>
-      <Instruction number="2" title="Make your own copy.">
-        <p>
-          Open the starter sketch and choose <b>Duplicate</b>, then keep working
-          in your copy. Rename it so it is easy to find later.
-        </p>
-      </Instruction>
-      <Instruction number="3" title="Keep the link nearby.">
-        <p>
-          You will connect your copy to the page in the next step. Leave the
-          p5.js tab open for now.
-        </p>
-        <div className="quiet-example">
-          Want to see where the sketch ends up?{" "}
-          <a href={EXAMPLE_PATH} target="_blank" rel="noreferrer">
-            View the finished app <ExternalIcon />
-          </a>
-        </div>
-      </Instruction>
+      <a
+        className="sketch-button"
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {label} <ExternalIcon />
+      </a>
+      {note ? <small className="under-button">{note}</small> : null}
     </>
   );
 }
 
-function FinishInstructions() {
+function FinishInstructions({ stepNumber }: { stepNumber: number }) {
   return (
     <>
       <div className="finish-card">
@@ -85,13 +82,13 @@ function FinishInstructions() {
           p5.js sketch. That is a lot for two hours.
         </p>
       </div>
-      <Instruction number="1" title="Make it yours.">
+      <Instruction stepNumber={stepNumber} number="1" title="Make it yours.">
         <p>
           Change the type, colours, or words. Small experiments are one of the
           best ways to learn what code does.
         </p>
       </Instruction>
-      <Instruction number="2" title="Try another sketch.">
+      <Instruction stepNumber={stepNumber} number="2" title="Try another sketch.">
         <p>
           Go back to your p5.js copy and change one value at a time. Refresh your
           page to see what changed.
@@ -113,23 +110,23 @@ function FinishInstructions() {
   );
 }
 
-function SetupInstructions() {
+function SetupInstructions({ stepNumber }: { stepNumber: number }) {
   return (
     <>
-      <Instruction number="1" title="Create your first file.">
+      <Instruction stepNumber={stepNumber} number="1" title="Create your first file.">
         <p>
           In your project folder, create a new file named{" "}
           <code>index.html</code>. The name and lowercase letters matter.
         </p>
       </Instruction>
-      <Instruction number="2" title="Add the basic document.">
+      <Instruction stepNumber={stepNumber} number="2" title="Add the basic document.">
         <p>
           Copy this starter structure into the file. It gives your browser the
           information it needs to read the page.
         </p>
         <CodeBlock />
       </Instruction>
-      <Instruction number="3" title="Open it in your browser.">
+      <Instruction stepNumber={stepNumber} number="3" title="Open it in your browser.">
         <p>
           Save the file, then open <code>index.html</code> in a browser. A blank
           white page means it is working.
@@ -143,14 +140,32 @@ function SetupInstructions() {
   );
 }
 
-function StandardInstructions({ step }: { step: Step }) {
+function StandardInstructions({
+  step,
+  stepNumber,
+}: {
+  step: Step;
+  stepNumber: number;
+}) {
   return (
     <>
       {step.instructions.map((block) => (
-        <Instruction key={block.title} number={block.number} title={block.title}>
+        <Instruction
+          key={block.title}
+          stepNumber={stepNumber}
+          number={block.number}
+          title={block.title}
+        >
           {block.body.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+          {block.link ? (
+            <InstructionLink
+              href={block.link.href}
+              label={block.link.label}
+              note={block.link.note}
+            />
+          ) : null}
           {block.tip ? <Tip>{block.tip}</Tip> : null}
         </Instruction>
       ))}
@@ -159,8 +174,9 @@ function StandardInstructions({ step }: { step: Step }) {
 }
 
 export function LessonInstructions({ step }: { step: Step }) {
-  if (step.variant === "setup") return <SetupInstructions />;
-  if (step.variant === "sketch") return <SketchInstructions />;
-  if (step.variant === "finish") return <FinishInstructions />;
-  return <StandardInstructions step={step} />;
+  const stepNumber = steps.findIndex((item) => item.slug === step.slug) + 1;
+
+  if (step.variant === "setup") return <SetupInstructions stepNumber={stepNumber} />;
+  if (step.variant === "finish") return <FinishInstructions stepNumber={stepNumber} />;
+  return <StandardInstructions step={step} stepNumber={stepNumber} />;
 }

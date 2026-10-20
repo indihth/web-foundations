@@ -1054,13 +1054,16 @@ function getStepNavigation(slug) {
 __turbopack_context__.s([
     "EXAMPLE_PATH",
     ()=>EXAMPLE_PATH,
+    "P5_SIGNUP_URL",
+    ()=>P5_SIGNUP_URL,
     "SKETCH_URL",
     ()=>SKETCH_URL,
     "STARTER_HTML",
     ()=>STARTER_HTML
 ]);
 const EXAMPLE_PATH = "/example/";
-const SKETCH_URL = "https://editor.p5js.org/";
+const P5_SIGNUP_URL = "https://editor.p5js.org/signup";
+const SKETCH_URL = "https://editor.p5js.org/indihth/sketches/qt4g9h3-V";
 const STARTER_HTML = `<!doctype html>
 <html lang="en">
   <head>

@@ -1,5 +1,7 @@
 /* [project]/app/globals.css.css [app-client] (css) */
 :root {
+  --font-size-base: 1rem;
+  --font-size-min: .875rem;
   font-family: var(--font-manrope), sans-serif;
   color: #171715;
   font-synthesis: none;
@@ -18,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 100%;
 }
 
 .site-header {
@@ -34,7 +37,7 @@ html {
   background: #fff;
   border-radius: 6px;
   padding: 8px 12px;
-  font-size: 12px;
+  font-size: .875rem;
   font-weight: 700;
   display: none;
 }
@@ -58,7 +61,7 @@ html {
   align-items: center;
   gap: 6px;
   padding: 12px 0;
-  font-size: 14px;
+  font-size: .875rem;
   font-weight: 600;
   text-decoration: none;
   display: flex;
@@ -70,7 +73,7 @@ html {
 
 .rail-heading a {
   color: #66665f;
-  font-size: 9px;
+  font-size: .875rem;
   text-decoration: underline;
 }
 
@@ -94,9 +97,10 @@ html {
 }
 
 body {
-  background: #f8f8f5;
   min-width: 320px;
   min-height: 100vh;
+  font-size: var(--font-size-base);
+  background: #f8f8f5;
   margin: 0;
 }
 
@@ -130,7 +134,7 @@ svg {
   align-items: center;
   gap: 11px;
   width: fit-content;
-  font-size: 14px;
+  font-size: .875rem;
   font-weight: 700;
   text-decoration: none;
   display: inline-flex;
@@ -148,7 +152,7 @@ svg {
   place-items: center;
   width: 29px;
   height: 29px;
-  font-size: 13px;
+  font-size: .875rem;
   display: grid;
 }
 
@@ -164,7 +168,7 @@ svg {
   align-items: center;
   gap: 5px;
   height: 100%;
-  font-size: 14px;
+  font-size: .875rem;
   font-weight: 600;
   text-decoration: none;
   display: flex;
@@ -218,7 +222,7 @@ svg {
   align-items: center;
   gap: 10px;
   margin-bottom: 24px;
-  font-size: 11px;
+  font-size: .875rem;
   font-weight: 800;
   display: flex;
 }
@@ -232,7 +236,7 @@ svg {
 .hero h1, .page-heading h1 {
   letter-spacing: -.06em;
   margin: 0;
-  font-size: clamp(54px, 5.6vw, 88px);
+  font-size: clamp(3.375rem, 5.6vw, 5.5rem);
   font-weight: 600;
   line-height: .97;
 }
@@ -241,7 +245,7 @@ svg {
   color: #55554f;
   max-width: 700px;
   margin: 28px auto 24px;
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.65;
 }
 
@@ -250,7 +254,7 @@ svg {
   justify-content: center;
   align-items: center;
   gap: 24px;
-  font-size: 12px;
+  font-size: .875rem;
   font-weight: 600;
   display: flex;
 }
@@ -268,13 +272,13 @@ svg {
 
 .hero-meta b {
   color: var(--ink);
-  font-size: 19px;
+  font-size: 1.1875rem;
 }
 
 .primary-button {
   min-width: 178px;
   padding: 17px 22px;
-  font-size: 14px;
+  font-size: .875rem;
 }
 
 .home-cards {
@@ -315,7 +319,7 @@ svg {
   align-items: center;
   min-height: 65px;
   padding: 0 25px;
-  font-size: 12px;
+  font-size: .875rem;
   display: flex;
 }
 
@@ -324,7 +328,7 @@ svg {
 }
 
 .card-topline span b {
-  font: 10px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   color: #74746c;
   margin-right: 10px;
 }
@@ -336,7 +340,7 @@ svg {
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  font-size: 10px;
+  font-size: .875rem;
   font-style: normal;
   font-weight: 700;
   display: flex;
@@ -397,14 +401,14 @@ svg {
 
 .placeholder-meme span, .placeholder-meme b {
   letter-spacing: .05em;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .placeholder-meme div {
   color: #aaa9a1;
   width: 150px;
   height: 120px;
-  font: 10px/1.4 var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem/1.4 var(--font-dm-mono), ui-monospace, monospace;
   border: 1px dashed #aaa9a1;
   place-items: center;
   margin: 13px 0;
@@ -427,14 +431,14 @@ svg {
 .mini-rail small {
   letter-spacing: .1em;
   margin-bottom: 22px;
-  font-size: 8px;
+  font-size: .875rem;
   font-weight: 800;
   display: block;
 }
 
 .mini-rail i {
   height: 39px;
-  font: 9px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   color: #77776f;
   grid-template-columns: 24px 1fr;
   align-items: center;
@@ -468,7 +472,7 @@ svg {
 
 .mini-lesson > span {
   letter-spacing: .1em;
-  font-size: 8px;
+  font-size: .875rem;
   font-weight: 800;
 }
 
@@ -488,19 +492,19 @@ svg {
 .mini-lesson h3 {
   letter-spacing: -.05em;
   margin: 0 0 12px;
-  font-size: clamp(29px, 3.2vw, 47px);
+  font-size: clamp(1.8125rem, 3.2vw, 2.9375rem);
   line-height: .95;
 }
 
 .mini-lesson p {
   color: #6b6b64;
   margin: 0;
-  font-size: 11px;
+  font-size: .875rem;
 }
 
 .mini-code {
   color: #f2f2ec;
-  font: 9px/1.7 var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem/1.7 var(--font-dm-mono), ui-monospace, monospace;
   background: #222220;
   border-radius: 5px;
   margin-top: 28px;
@@ -521,7 +525,7 @@ svg {
   letter-spacing: .1em;
   color: #6c6c65;
   margin-bottom: 5px;
-  font-size: 8px;
+  font-size: .875rem;
   font-weight: 800;
   display: block;
 }
@@ -529,13 +533,13 @@ svg {
 .card-caption h2 {
   letter-spacing: -.035em;
   margin: 0;
-  font-size: 23px;
+  font-size: 1.4375rem;
 }
 
 .card-caption p {
   color: #5d5d56;
   margin: 0;
-  font-size: 11px;
+  font-size: .875rem;
   line-height: 1.5;
 }
 
@@ -552,14 +556,14 @@ svg {
   text-transform: uppercase;
   letter-spacing: .1em;
   padding-top: 4px;
-  font-size: 9px;
+  font-size: .875rem;
   font-weight: 800;
 }
 
 .workshop-note p {
   color: #595953;
   margin: 0;
-  font-size: 14px;
+  font-size: .875rem;
   line-height: 1.7;
 }
 
@@ -567,7 +571,7 @@ svg {
   white-space: nowrap;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
+  font-size: .875rem;
   font-weight: 800;
   display: flex;
 }
@@ -593,7 +597,7 @@ svg {
   text-transform: uppercase;
   letter-spacing: .14em;
   color: var(--lime);
-  font-size: 9px;
+  font-size: .875rem;
   font-weight: 800;
 }
 
@@ -601,7 +605,7 @@ svg {
   color: #d7d7d0;
   max-width: 300px;
   margin: 10px 0 0;
-  font-size: 12px;
+  font-size: .875rem;
   line-height: 1.45;
 }
 
@@ -624,7 +628,7 @@ svg {
 }
 
 .resource-number {
-  font: 11px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   color: #8d8d85;
 }
 
@@ -633,13 +637,13 @@ svg {
 }
 
 .resource-link b {
-  font-size: 14px;
+  font-size: .875rem;
 }
 
 .resource-link small {
   color: #73736c;
   margin-top: 6px;
-  font-size: 11px;
+  font-size: .875rem;
 }
 
 .guide-index {
@@ -657,14 +661,14 @@ svg {
 }
 
 .page-heading h1 {
-  font-size: clamp(50px, 5.2vw, 76px);
+  font-size: clamp(3.125rem, 5.2vw, 4.75rem);
 }
 
 .page-heading p {
   color: #5e5e58;
   max-width: 420px;
   margin: 0 0 3px;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.65;
 }
 
@@ -680,7 +684,7 @@ svg {
   justify-content: space-between;
   align-items: center;
   padding: 18px 0;
-  font-size: 10px;
+  font-size: .875rem;
   font-weight: 800;
   display: flex;
 }
@@ -709,7 +713,7 @@ svg {
 }
 
 .step-number {
-  font: 12px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   color: #85857d;
 }
 
@@ -719,13 +723,13 @@ svg {
 
 .step-row-copy b {
   letter-spacing: -.02em;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .step-row-copy small {
   color: #717169;
   margin-top: 6px;
-  font-size: 12px;
+  font-size: .875rem;
 }
 
 .advanced-pill {
@@ -734,7 +738,7 @@ svg {
   border: 1px solid #aaa9a1;
   border-radius: 20px;
   padding: 6px 9px;
-  font-size: 9px;
+  font-size: .875rem;
   font-weight: 700;
 }
 
@@ -758,7 +762,7 @@ svg {
   align-items: center;
   gap: 24px;
   margin-top: 30px;
-  font-size: 12px;
+  font-size: .875rem;
   display: flex;
 }
 
@@ -830,7 +834,7 @@ svg {
   writing-mode: vertical-rl;
   text-transform: uppercase;
   letter-spacing: .1em;
-  font-size: 9px;
+  font-size: .875rem;
   font-weight: 800;
 }
 
@@ -849,7 +853,7 @@ svg {
 .rail-heading span {
   text-transform: uppercase;
   letter-spacing: .1em;
-  font-size: 11px;
+  font-size: .875rem;
   font-weight: 800;
 }
 
@@ -866,7 +870,7 @@ svg {
   background: none;
   border: 0;
   padding: 0;
-  font-size: 9px;
+  font-size: .875rem;
   text-decoration: underline;
 }
 
@@ -904,7 +908,7 @@ svg {
 .rail-list a span {
   width: 24px;
   height: 24px;
-  font: 9px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   border: 1px solid #c3c3ba;
   border-radius: 50%;
   place-items: center;
@@ -912,14 +916,14 @@ svg {
 }
 
 .rail-list a b {
-  font-size: 11px;
+  font-size: .875rem;
   font-weight: 600;
   line-height: 1.25;
 }
 
 .rail-list a i {
   font-style: normal;
-  font: 8px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   color: #8d8d85;
 }
 
@@ -936,14 +940,14 @@ svg {
 .rail-help span {
   color: #67675f;
   margin-bottom: 5px;
-  font-size: 9px;
+  font-size: .875rem;
   display: block;
 }
 
 .rail-help a {
   align-items: center;
   gap: 5px;
-  font-size: 11px;
+  font-size: .875rem;
   font-weight: 800;
   display: flex;
 }
@@ -963,7 +967,7 @@ svg {
   grid-template-columns: 82px 1fr 38px;
   align-items: center;
   gap: 14px;
-  font-size: 10px;
+  font-size: .875rem;
   font-weight: 700;
   display: grid;
 }
@@ -982,7 +986,7 @@ svg {
 }
 
 .progress-line b {
-  font: 9px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   text-align: right;
   font-weight: 400;
 }
@@ -996,14 +1000,14 @@ svg {
   color: #6e6e67;
   text-transform: uppercase;
   letter-spacing: .13em;
-  font-size: 10px;
+  font-size: .875rem;
   font-weight: 800;
 }
 
 .lesson-heading h1 {
   letter-spacing: -.055em;
   margin: 14px 0 18px;
-  font-size: clamp(43px, 4.2vw, 65px);
+  font-size: clamp(2.6875rem, 4.2vw, 4.0625rem);
   font-weight: 600;
   line-height: 1.02;
 }
@@ -1012,7 +1016,7 @@ svg {
   color: #5c5c55;
   max-width: 650px;
   margin: 0;
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.6;
 }
 
@@ -1033,7 +1037,7 @@ svg {
   color: #fff;
   width: 34px;
   height: 34px;
-  font: 11px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   border-radius: 50%;
   place-items: center;
   display: grid;
@@ -1042,18 +1046,25 @@ svg {
 .instruction h2 {
   letter-spacing: -.025em;
   margin: 3px 0 11px;
-  font-size: 21px;
+  font-size: 1.3125rem;
 }
 
 .instruction p {
   color: #55554f;
   margin: 0;
-  font-size: 15px;
+  font-size: .9375rem;
   line-height: 1.7;
 }
 
+.instruction-screenshot {
+  width: 100%;
+  height: auto;
+  margin-top: 22px;
+  display: block;
+}
+
 .instruction p code {
-  font: 13px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   color: var(--ink);
   background: #e9e9e2;
   border-radius: 3px;
@@ -1072,29 +1083,10 @@ svg {
 
 .code-header {
   color: #bdbdb5;
-  font: 10px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   background: #30302d;
   border-bottom: 1px solid #474743;
-  justify-content: space-between;
-  align-items: center;
   padding: 10px 14px;
-  display: flex;
-}
-
-.code-header button {
-  color: #fff;
-  cursor: pointer;
-  font: 10px var(--font-manrope), sans-serif;
-  background: none;
-  border: 0;
-  align-items: center;
-  gap: 7px;
-  font-weight: 700;
-  display: flex;
-}
-
-.code-header svg {
-  width: 15px;
 }
 
 .code-block pre {
@@ -1102,7 +1094,9 @@ svg {
   overflow-wrap: anywhere;
   word-break: break-word;
   max-width: 100%;
-  font: 12px/1.75 var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem/1.75 var(--font-dm-mono), ui-monospace, monospace;
+  -webkit-user-select: none;
+  user-select: none;
   margin: 0;
   padding: 22px;
 }
@@ -1110,6 +1104,8 @@ svg {
 .code-block code {
   white-space: inherit;
   overflow-wrap: inherit;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .tip {
@@ -1124,12 +1120,12 @@ svg {
   letter-spacing: .1em;
   color: #52620d;
   margin-bottom: 4px;
-  font-size: 9px;
+  font-size: .875rem;
   display: block;
 }
 
 .tip p {
-  font-size: 12px;
+  font-size: .875rem;
 }
 
 .advanced-section {
@@ -1164,12 +1160,12 @@ svg {
   background: var(--purple);
   border-radius: 14px;
   padding: 5px 8px;
-  font-size: 8px;
+  font-size: .875rem;
   font-style: normal;
 }
 
 .advanced-section > button b {
-  font-size: 13px;
+  font-size: .875rem;
 }
 
 .advanced-section > button em {
@@ -1189,17 +1185,19 @@ svg {
 
 .advanced-content h2 {
   margin: 22px 0 9px;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .advanced-content p {
   color: #5e5e57;
-  font-size: 13px;
+  font-size: .875rem;
   line-height: 1.65;
 }
 
 .advanced-content code {
-  font: 11px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
+  -webkit-user-select: none;
+  user-select: none;
   background: #fff;
   border: 1px solid #d2d0c7;
   padding: 15px;
@@ -1257,7 +1255,7 @@ svg {
   text-transform: uppercase;
   letter-spacing: .08em;
   color: #85857d;
-  font-size: 9px;
+  font-size: .875rem;
 }
 
 .next small {
@@ -1277,7 +1275,7 @@ svg {
   width: fit-content;
   margin-top: 22px;
   padding: 16px 18px;
-  font-size: 13px;
+  font-size: .875rem;
   font-weight: 700;
   text-decoration: none;
   display: flex;
@@ -1286,7 +1284,7 @@ svg {
 .under-button {
   color: #74746c;
   margin-top: 11px;
-  font-size: 10px;
+  font-size: .875rem;
   display: block;
 }
 
@@ -1295,7 +1293,7 @@ svg {
   background: #eeeee8;
   margin-top: 20px;
   padding: 17px 18px;
-  font-size: 12px;
+  font-size: .875rem;
 }
 
 .quiet-example a {
@@ -1318,14 +1316,14 @@ svg {
 .finish-card span {
   text-transform: uppercase;
   letter-spacing: .12em;
-  font-size: 9px;
+  font-size: .875rem;
   font-weight: 800;
 }
 
 .finish-card h2 {
   letter-spacing: -.04em;
   margin: 10px 0;
-  font-size: 36px;
+  font-size: 2.25rem;
 }
 
 .finish-card p {
@@ -1358,11 +1356,11 @@ svg {
   letter-spacing: .1em;
   grid-column: 1 / -1;
   margin-bottom: 6px;
-  font-size: 9px;
+  font-size: .875rem;
 }
 
 .end-resources b {
-  font-size: 12px;
+  font-size: .875rem;
 }
 
 .missing {
@@ -1376,7 +1374,7 @@ svg {
 }
 
 .missing > span {
-  font: 12px var(--font-dm-mono), ui-monospace, monospace;
+  font: .875rem var(--font-dm-mono), ui-monospace, monospace;
   background: var(--purple);
   border-radius: 20px;
   padding: 6px 10px;
@@ -1385,7 +1383,7 @@ svg {
 .missing h1 {
   letter-spacing: -.05em;
   margin: 16px 0 4px;
-  font-size: clamp(44px, 6vw, 78px);
+  font-size: clamp(2.75rem, 6vw, 4.875rem);
 }
 
 .missing p {
@@ -1428,7 +1426,7 @@ svg {
   }
 
   .brand {
-    font-size: 12px;
+    font-size: .875rem;
   }
 
   .brand b {
@@ -1456,16 +1454,16 @@ svg {
 
   .eyebrow {
     margin-bottom: 18px;
-    font-size: 9px;
+    font-size: .875rem;
   }
 
   .hero h1 {
-    font-size: clamp(48px, 14.2vw, 65px);
+    font-size: clamp(3rem, 14.2vw, 4.0625rem);
   }
 
   .hero-intro {
     margin: 23px 0;
-    font-size: 14px;
+    font-size: .875rem;
     line-height: 1.6;
   }
 
@@ -1534,7 +1532,7 @@ svg {
   }
 
   .mini-lesson h3 {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .card-caption {
@@ -1545,7 +1543,7 @@ svg {
   }
 
   .card-caption h2 {
-    font-size: 21px;
+    font-size: 1.3125rem;
   }
 
   .workshop-note {
@@ -1559,7 +1557,7 @@ svg {
   }
 
   .workshop-note p {
-    font-size: 13px;
+    font-size: .875rem;
   }
 
   .workshop-note a {
@@ -1592,12 +1590,12 @@ svg {
   }
 
   .page-heading h1 {
-    font-size: 46px;
+    font-size: 2.875rem;
   }
 
   .page-heading p {
     margin-top: 25px;
-    font-size: 13px;
+    font-size: .875rem;
   }
 
   .step-row {
@@ -1612,11 +1610,11 @@ svg {
   }
 
   .step-row-copy b {
-    font-size: 14px;
+    font-size: .875rem;
   }
 
   .step-row-copy small {
-    font-size: 10px;
+    font-size: .875rem;
     line-height: 1.4;
   }
 
@@ -1625,7 +1623,7 @@ svg {
     width: fit-content;
     margin-top: -10px;
     padding: 4px 7px;
-    font-size: 7px;
+    font-size: .875rem;
   }
 
   .row-arrow {
@@ -1656,7 +1654,7 @@ svg {
     width: 100%;
     height: 47px;
     padding: 0 19px;
-    font-size: 10px;
+    font-size: .875rem;
     display: flex;
     position: sticky;
     top: 64px;
@@ -1715,11 +1713,11 @@ svg {
   }
 
   .lesson-heading h1 {
-    font-size: 42px;
+    font-size: 2.625rem;
   }
 
   .lesson-heading p {
-    font-size: 14px;
+    font-size: .875rem;
   }
 
   .instruction {
@@ -1731,15 +1729,15 @@ svg {
   .instruction-number {
     width: 29px;
     height: 29px;
-    font-size: 9px;
+    font-size: .875rem;
   }
 
   .instruction h2 {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   .instruction p {
-    font-size: 13px;
+    font-size: .875rem;
   }
 
   .code-block {
@@ -1748,7 +1746,7 @@ svg {
 
   .code-block pre {
     padding: 17px;
-    font-size: 10px;
+    font-size: .875rem;
   }
 
   .advanced-section > button span {
@@ -1756,7 +1754,7 @@ svg {
   }
 
   .advanced-section > button b {
-    font-size: 11px;
+    font-size: .875rem;
   }
 
   .advanced-content {
@@ -1770,7 +1768,7 @@ svg {
   .lesson-navigation a {
     min-height: 66px;
     padding: 10px;
-    font-size: 12px;
+    font-size: .875rem;
   }
 
   .finish-card {
@@ -1778,7 +1776,7 @@ svg {
   }
 
   .finish-card h2 {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 
   .end-resources {

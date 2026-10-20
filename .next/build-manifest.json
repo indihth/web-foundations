@@ -7,14 +7,14 @@
     "static/chunks/0cz1d0mv5g_q7.js"
   ],
   "lowPriorityFiles": [
-    "static/dkn5LZMzcDeUNSFSN4rzG/_buildManifest.js",
-    "static/dkn5LZMzcDeUNSFSN4rzG/_ssgManifest.js",
-    "static/dkn5LZMzcDeUNSFSN4rzG/_clientMiddlewareManifest.js"
+    "static/VAqr6xCtCq2pjlHICM7ki/_buildManifest.js",
+    "static/VAqr6xCtCq2pjlHICM7ki/_ssgManifest.js",
+    "static/VAqr6xCtCq2pjlHICM7ki/_clientMiddlewareManifest.js"
   ],
   "rootMainFiles": [
-    "static/chunks/1x6obpmlu1_c2.js",
+    "static/chunks/1ckvzn7sfprko.js",
     "static/chunks/06bs-nf19b2js.js",
-    "static/chunks/1vo0wohvofgd7.js",
+    "static/chunks/1s37vwjm584j-.js",
     "static/chunks/3l_qmp-61z4yc.js",
     "static/chunks/turbopack-3-ry682tkyiqk.js"
   ],
@@ -22,9 +22,9 @@
   "pagesChunkGroupBootstrapParams": {
     "/page": {
       "otherChunks": [
-        "static/chunks/1x6obpmlu1_c2.js",
+        "static/chunks/1ckvzn7sfprko.js",
         "static/chunks/06bs-nf19b2js.js",
-        "static/chunks/1vo0wohvofgd7.js",
+        "static/chunks/1s37vwjm584j-.js",
         "static/chunks/3l_qmp-61z4yc.js"
       ],
       "runtimeModuleIds": [
@@ -33,9 +33,9 @@
     },
     "/_not-found/page": {
       "otherChunks": [
-        "static/chunks/1x6obpmlu1_c2.js",
+        "static/chunks/1ckvzn7sfprko.js",
         "static/chunks/06bs-nf19b2js.js",
-        "static/chunks/1vo0wohvofgd7.js",
+        "static/chunks/1s37vwjm584j-.js",
         "static/chunks/3l_qmp-61z4yc.js"
       ],
       "runtimeModuleIds": [
@@ -44,9 +44,9 @@
     },
     "/_global-error/page": {
       "otherChunks": [
-        "static/chunks/1x6obpmlu1_c2.js",
+        "static/chunks/1ckvzn7sfprko.js",
         "static/chunks/06bs-nf19b2js.js",
-        "static/chunks/1vo0wohvofgd7.js",
+        "static/chunks/1s37vwjm584j-.js",
         "static/chunks/3l_qmp-61z4yc.js"
       ],
       "runtimeModuleIds": [
@@ -55,9 +55,9 @@
     },
     "/guide/page": {
       "otherChunks": [
-        "static/chunks/1x6obpmlu1_c2.js",
+        "static/chunks/1ckvzn7sfprko.js",
         "static/chunks/06bs-nf19b2js.js",
-        "static/chunks/1vo0wohvofgd7.js",
+        "static/chunks/1s37vwjm584j-.js",
         "static/chunks/3l_qmp-61z4yc.js"
       ],
       "runtimeModuleIds": [
@@ -66,9 +66,9 @@
     },
     "/guide/[slug]/page": {
       "otherChunks": [
-        "static/chunks/1x6obpmlu1_c2.js",
+        "static/chunks/1ckvzn7sfprko.js",
         "static/chunks/06bs-nf19b2js.js",
-        "static/chunks/1vo0wohvofgd7.js",
+        "static/chunks/1s37vwjm584j-.js",
         "static/chunks/3l_qmp-61z4yc.js"
       ],
       "runtimeModuleIds": [

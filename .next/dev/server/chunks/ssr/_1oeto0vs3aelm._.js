@@ -70,8 +70,6 @@ function GuideStepNotFound() {
 __turbopack_context__.s([
     "Arrow",
     ()=>Arrow,
-    "CopyIcon",
-    ()=>CopyIcon,
     "ExternalIcon",
     ()=>ExternalIcon
 ]);
@@ -115,41 +113,6 @@ function ExternalIcon() {
     }, void 0, false, {
         fileName: "[project]/components/workshop/icons.tsx",
         lineNumber: 20,
-        columnNumber: 5
-    }, this);
-}
-function CopyIcon() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-        "aria-hidden": "true",
-        viewBox: "0 0 20 20",
-        fill: "none",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                x: "7",
-                y: "7",
-                width: "9",
-                height: "9",
-                rx: "1.5",
-                stroke: "currentColor",
-                strokeWidth: "1.5"
-            }, void 0, false, {
-                fileName: "[project]/components/workshop/icons.tsx",
-                lineNumber: 33,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M13 7V5.5A1.5 1.5 0 0011.5 4h-7A1.5 1.5 0 003 5.5v7A1.5 1.5 0 004.5 14H7",
-                stroke: "currentColor",
-                strokeWidth: "1.5"
-            }, void 0, false, {
-                fileName: "[project]/components/workshop/icons.tsx",
-                lineNumber: 42,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "[project]/components/workshop/icons.tsx",
-        lineNumber: 32,
         columnNumber: 5
     }, this);
 }

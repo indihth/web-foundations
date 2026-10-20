@@ -1,26 +1,35 @@
-{"timestamp":"00:00:00.702","source":"Server","level":"LOG","message":"- Cache Components enabled"}
-{"timestamp":"00:00:00.702","source":"Server","level":"LOG","message":"- Partial Prefetching enabled"}
-{"timestamp":"00:00:00.702","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:01.305","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:00:10.595","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:01:20.903","source":"Server","level":"LOG","message":"✓ Compiled in 13ms"}
-{"timestamp":"00:01:40.070","source":"Server","level":"LOG","message":"✓ Compiled in 163ms"}
-{"timestamp":"00:01:41.490","source":"Server","level":"LOG","message":"✓ Compiled in 29ms"}
-{"timestamp":"00:01:42.702","source":"Server","level":"LOG","message":"✓ Compiled in 23ms"}
-{"timestamp":"00:01:45.684","source":"Server","level":"LOG","message":"✓ Compiled in 14ms"}
-{"timestamp":"00:01:46.012","source":"Server","level":"LOG","message":"✓ Compiled in 13ms"}
-{"timestamp":"00:01:46.737","source":"Server","level":"LOG","message":"✓ Compiled in 116ms"}
-{"timestamp":"00:01:49.937","source":"Server","level":"LOG","message":"✓ Compiled in 78ms"}
-{"timestamp":"00:01:50.155","source":"Server","level":"LOG","message":"✓ Compiled in 14ms"}
-{"timestamp":"00:01:53.238","source":"Server","level":"LOG","message":"✓ Compiled in 31ms"}
-{"timestamp":"00:01:55.614","source":"Server","level":"LOG","message":"✓ Compiled in 12ms"}
-{"timestamp":"00:02:01.120","source":"Server","level":"LOG","message":"✓ Compiled in 8ms"}
-{"timestamp":"00:02:03.301","source":"Server","level":"LOG","message":"✓ Compiled in 11ms"}
-{"timestamp":"00:02:20.199","source":"Server","level":"LOG","message":"✓ Compiled in 13ms"}
-{"timestamp":"00:02:20.324","source":"Server","level":"ERROR","message":"⨯ ReferenceError: useCallback is not defined"}
-{"timestamp":"00:02:20.436","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:07:47.860","source":"Browser","level":"ERROR","message":"Uncaught ReferenceError: useCallback is not defined\n    at SiteHeader (components/workshop/site-header.tsx:22:18)\n    at RootLayout (app/layout.tsx:31:9)\n  \u001b[90m20 |\u001b[0m   \u001b[36mconst\u001b[0m [menuOpen, setMenuOpen] = useState(\u001b[36mfalse\u001b[0m);\n  \u001b[90m21 |\u001b[0m   \u001b[36mconst\u001b[0m [lastPathname, setLastPathname] = useState(pathname);\n\u001b[31m\u001b[1m>\u001b[0m \u001b[90m22 |\u001b[0m   \u001b[36mconst\u001b[0m menuId = useId();\n  \u001b[90m   |\u001b[0m                  \u001b[31m\u001b[1m^\u001b[0m\n  \u001b[90m23 |\u001b[0m\n  \u001b[90m24 |\u001b[0m   \u001b[36mif\u001b[0m (pathname !== lastPathname) {\n  \u001b[90m25 |\u001b[0m     setLastPathname(pathname);"}
-{"timestamp":"00:07:47.860","source":"Server","level":"ERROR","message":"[browser] \"\\u001b[31mUncaught ReferenceError: useCallback is not defined\\u001b[39m\\n\\u001b[31m    at SiteHeader (components/workshop/site-header.tsx:22:18)\\n    at RootLayout (app/layout.tsx:31:9)\\u001b[39m\\n  \\u001b[90m20 |\\u001b[0m   \\u001b[36mconst\\u001b[0m [menuOpen, setMenuOpen] = useState(\\u001b[36mfalse\\u001b[0m);\\n  \\u001b[90m21 |\\u001b[0m   \\u001b[36mconst\\u001b[0m [lastPathname, setLastPathname] = useState(pathname);\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m22 |\\u001b[0m   \\u001b[36mconst\\u001b[0m menuId = useId();\\n  \\u001b[90m   |\\u001b[0m                  \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m23 |\\u001b[0m\\n  \\u001b[90m24 |\\u001b[0m   \\u001b[36mif\\u001b[0m (pathname !== lastPathname) {\\n  \\u001b[90m25 |\\u001b[0m     setLastPathname(pathname);\""}
-{"timestamp":"00:16:53.961","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:16:56.562","source":"Browser","level":"WARN","message":"Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior"}
-{"timestamp":"00:16:56.598","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mDetected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\\\"smooth\\\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior\\u001b[39m\""}
+{"timestamp":"00:00:03.233","source":"Server","level":"LOG","message":"- Cache Components enabled"}
+{"timestamp":"00:00:03.233","source":"Server","level":"LOG","message":"- Partial Prefetching enabled"}
+{"timestamp":"00:00:03.234","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:09.153","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:09.508","source":"Browser","level":"WARN","message":"Image with src \"/_next/static/media/1-1.14w30zvzs95_5.png\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading"}
+{"timestamp":"00:00:09.671","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/_next/static/media/1-1.14w30zvzs95_5.png\\\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\\\"eager\\\"` property if this image is above the fold.\\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\\u001b[39m\""}
+{"timestamp":"00:00:22.001","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:22.442","source":"Browser","level":"WARN","message":"Image with src \"/_next/static/media/1-1.14w30zvzs95_5.png\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading"}
+{"timestamp":"00:00:22.486","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/_next/static/media/1-1.14w30zvzs95_5.png\\\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\\\"eager\\\"` property if this image is above the fold.\\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\\u001b[39m\""}
+{"timestamp":"00:00:24.205","source":"Browser","level":"WARN","message":"Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior"}
+{"timestamp":"00:00:24.751","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mDetected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\\\"smooth\\\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior\\u001b[39m\""}
+{"timestamp":"00:01:10.856","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:11.147","source":"Browser","level":"WARN","message":"Image with src \"/_next/static/media/1-1.14w30zvzs95_5.png\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading"}
+{"timestamp":"00:01:11.149","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/_next/static/media/1-1.14w30zvzs95_5.png\\\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\\\"eager\\\"` property if this image is above the fold.\\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\\u001b[39m\""}
+{"timestamp":"00:01:24.194","source":"Server","level":"LOG","message":"✓ Compiled in 815ms"}
+{"timestamp":"00:01:28.491","source":"Server","level":"LOG","message":"✓ Compiled in 45ms"}
+{"timestamp":"00:01:29.267","source":"Server","level":"LOG","message":"✓ Compiled in 70ms"}
+{"timestamp":"00:01:53.890","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:17.416","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:02:30.616","source":"Server","level":"LOG","message":"✓ Compiled in 226ms"}
+{"timestamp":"00:02:30.725","source":"Server","level":"LOG","message":"✓ Compiled in 48ms"}
+{"timestamp":"00:02:45.335","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:04:12.858","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:14:27.685","source":"Server","level":"LOG","message":"✓ Compiled in 231ms"}
+{"timestamp":"00:14:49.819","source":"Server","level":"LOG","message":"✓ Compiled in 128ms"}
+{"timestamp":"00:24:19.796","source":"Server","level":"LOG","message":"✓ Compiled in 1223ms"}
+{"timestamp":"00:24:21.521","source":"Server","level":"LOG","message":"✓ Compiled in 892ms"}
+{"timestamp":"00:24:21.979","source":"Server","level":"LOG","message":"✓ Compiled in 77ms"}
+{"timestamp":"00:24:22.335","source":"Server","level":"LOG","message":"✓ Compiled in 2ms"}
+{"timestamp":"00:24:24.604","source":"Server","level":"LOG","message":"✓ Compiled in 50ms"}
+{"timestamp":"00:24:25.245","source":"Server","level":"LOG","message":"✓ Compiled in 150ms"}
+{"timestamp":"00:24:26.121","source":"Server","level":"LOG","message":"✓ Compiled in 305ms"}
+{"timestamp":"00:24:26.540","source":"Server","level":"LOG","message":"✓ Compiled in 48ms"}
+{"timestamp":"00:24:26.769","source":"Server","level":"LOG","message":"✓ Compiled in 94ms"}
+{"timestamp":"00:24:27.284","source":"Server","level":"LOG","message":"✓ Compiled in 45ms"}
