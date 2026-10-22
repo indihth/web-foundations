@@ -16,9 +16,9 @@ export default function Home() {
           </div>
           <h1>Code a meme creation app</h1>
           <p className="hero-intro">
-            A practical introduction to HTML, CSS and a little JavaScript —
-            built to follow during today’s session and return to whenever you
-            need it.
+            A practical introduction to HTML and JavaScript in the p5.js editor,
+            using a provided stylesheet and helper functions, built to follow
+            during today’s session and return to whenever you need it.
           </p>
           <div className="hero-meta">
             <span>
@@ -105,12 +105,8 @@ export default function Home() {
                 <div className="mini-progress">
                   <i />
                 </div>
-                <h3>
-                  Set up
-                  <br />
-                  p5.js
-                </h3>
-                <p>Create an account and save a copy of the template.</p>
+                <h3>{firstStep.title}</h3>
+                <p>{firstStep.summary}</p>
                 <div className="mini-code">
                   File → Save
                   <br />
@@ -120,7 +116,7 @@ export default function Home() {
             </div>
             <div className="card-caption">
               <div>
-                <span>Eight clear steps</span>
+                <span>{total} clear steps</span>
                 <h2>Follow the guide</h2>
               </div>
               <p>
@@ -134,10 +130,11 @@ export default function Home() {
         <div className="workshop-note">
           <span>How we’ll work</span>
           <p>
-            We’ll write the page in our code editor and use the online{" "}
-            <b>p5.js editor</b> for the interactive sketch. The guide stays
-            online, so you can revisit the instructions and optional advanced
-            sections later.
+            You’ll build the page in the online <b>p5.js editor</b>: type HTML
+            in index.html, call helper functions from sketch.js, and use class
+            names from the provided stylesheet. No CSS to write today. On each
+            step, switch to Advanced to use document.getElementById instead of
+            the helpers.
           </p>
           <a href={SKETCH_URL} target="_blank" rel="noreferrer">
             Visit the p5.js editor <ExternalIcon />

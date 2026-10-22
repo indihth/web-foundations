@@ -1,5 +1,9 @@
-// helpers.js — provided for the workshop. You do not need to edit this file.
-// Curious how it works? Read the comments below.
+/////////////////////////////////////////////////////
+// helpers.js - You don't need to edit this file.
+//
+// Explore the code below to understand how the meme generator works.
+/////////////////////////////////////////////////////
+
 
 // Returns whatever the user typed in the "Top text" box (HTML id="top").
 function topWords() {
@@ -39,6 +43,17 @@ function topWords() {
     if (!file) return "";
     return URL.createObjectURL(file);
   }
+
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////
+// These functions are a bit more complicated. 
+// Can you understand how they work?
+/////////////////////////////////////////////////////
+
   
   // Changes how big the meme text looks. size is a number, e.g. 9.
   function applyMemeTextSize(size) {

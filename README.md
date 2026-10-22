@@ -1,6 +1,6 @@
-# IADT Computing — Taster Session
+# IADT Computing: Taster Session
 
-A workshop site for building a meme creation app with HTML, CSS, and a little JavaScript (p5.js). The home page introduces the session; the guide walks through eight steps with optional advanced sections, a step sidebar, and links to the finished example.
+A workshop site for building a meme creation app in the p5.js editor with HTML and a little JavaScript. The home page introduces the session; the guide walks through guided steps with optional under-the-hood sections, a step sidebar, and links to the finished example.
 
 The finished Memeo example lives in [`public/example/`](public/example/) as plain HTML, CSS, and JavaScript so students can view the source.
 

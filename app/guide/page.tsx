@@ -21,14 +21,15 @@ export default function GuideIndexPage() {
             <span /> Workshop guide
           </div>
           <h1>
-            Eight steps, one
+            {total} steps, one
             <br />
-            working web page.
+            working meme page.
           </h1>
         </div>
         <p>
-          Start at the beginning or jump back into any step. Advanced sections
-          are optional and can be saved for later.
+          Start at the beginning or jump back into any step. Use Regular for
+          helper functions, or switch to Advanced on a step to use
+          document.getElementById yourself.
         </p>
       </div>
       <div className="step-table">
@@ -51,9 +52,6 @@ export default function GuideIndexPage() {
               <b>{step.title}</b>
               <small>{step.summary}</small>
             </span>
-            {step.advanced ? (
-              <span className="advanced-pill">Advanced</span>
-            ) : null}
             <span className="row-arrow">
               <Arrow />
             </span>

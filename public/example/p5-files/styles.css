@@ -57,6 +57,7 @@
   
   .hero {
     position: relative;
+    isolation: isolate;
     margin: 28px 24px 0;
     display: flex;
     flex-direction: column;
@@ -66,10 +67,11 @@
   .hero::before {
     content: "";
     position: absolute;
-    left: 12px;
-    top: -12px;
-    width: 84px;
-    height: 84px;
+    z-index: 0;
+    left: -20px;
+    top: 28px;
+    width: 76px;
+    height: 76px;
     transform: rotate(-20deg);
     background:
       radial-gradient(circle at 25% 25%, #ff7a1a 0 45%, transparent 46%),
@@ -80,14 +82,21 @@
   .hero::after {
     content: "";
     position: absolute;
-    right: 18%;
-    bottom: 48px;
-    width: 46px;
-    height: 96px;
+    z-index: 0;
+    right: clamp(8px, 4vw, 48px);
+    top: clamp(72px, 22vw, 132px);
+    width: 40px;
+    height: 88px;
     border-radius: 30px;
     transform: rotate(18deg);
     background: linear-gradient(160deg, #6d7bff, #c18bff);
     pointer-events: none;
+  }
+  
+  .hero h1,
+  .hero-note {
+    position: relative;
+    z-index: 1;
   }
   
   .hero h1 {

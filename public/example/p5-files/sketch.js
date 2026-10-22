@@ -1,12 +1,14 @@
+// Leave setup() as it is. noCanvas() stops p5 from drawing a canvas on top of your page.
 function setup() {
-    noCanvas();
-  }
-  
-  function draw() {
-    let topText = topWords();
-    let bottomText = bottomWords();
-    let size = fontSize();
-  
-    writeOnImage(topText, bottomText, size);
-  }
-  
+  noCanvas();
+}
+
+function draw() {
+  // ============================================
+  // code starts here
+  // ============================================
+
+  // ============================================
+  // code ends here
+  // ============================================
+}

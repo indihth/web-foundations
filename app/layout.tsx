@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Mono, Manrope } from "next/font/google";
 import { SiteHeader } from "@/components/workshop/site-header";
+import { WorkshopModeProvider } from "@/lib/workshop-mode";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -17,7 +18,7 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "IADT Computing — Taster Session",
+    default: "IADT Computing: Taster Session",
     template: "%s · IADT Computing",
   },
   description:
@@ -28,8 +29,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${manrope.variable} ${dmMono.variable}`}>
       <body>
-        <SiteHeader />
-        {children}
+        <WorkshopModeProvider>
+          <SiteHeader />
+          {children}
+        </WorkshopModeProvider>
       </body>
     </html>
   );

@@ -42,7 +42,7 @@ export function SiteHeader() {
       <Link className="brand" href="/">
         <span className="brand-mark">I</span>
         <span>
-          IADT Computing <b>— Taster Session</b>
+          IADT Computing: <b>Taster Session</b>
         </span>
       </Link>
       <nav aria-label="Main navigation" className="site-header-nav">

@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { steps } from "@/content/steps";
-import { EXAMPLE_PATH } from "@/lib/workshop-urls";
-import { Arrow, ExternalIcon } from "./icons";
+import { getStepRailInstructions } from "@/lib/instruction-rail";
+import { useWorkshopMode } from "@/lib/workshop-mode";
+import { Arrow } from "./icons";
 
 const MOBILE_MAX = 720;
-
 function useIsMobile() {
   const [mobile, setMobile] = useState(false);
 
@@ -26,9 +26,12 @@ export function StepRail({ currentSlug }: { currentSlug: string }) {
   const [open, setOpen] = useState(false);
   const [minimized, setMinimized] = useState(false);
   const isMobile = useIsMobile();
+  const { advanced: advancedMode } = useWorkshopMode();
   const total = steps.length;
   const currentIndex = steps.findIndex((s) => s.slug === currentSlug);
   const currentNumber = currentIndex >= 0 ? currentIndex + 1 : 1;
+  const currentStep = currentIndex >= 0 ? steps[currentIndex] : steps[0];
+  const railInstructions = getStepRailInstructions(currentStep, advancedMode);
   const [lastSlug, setLastSlug] = useState(currentSlug);
 
   if (currentSlug !== lastSlug) {
@@ -43,6 +46,11 @@ export function StepRail({ currentSlug }: { currentSlug: string }) {
       setMinimized(false);
     }
     setOpen((value) => !value);
+  };
+
+  const scrollToInstruction = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
   };
 
   const showMinimized = minimized && !isMobile;
@@ -85,26 +93,36 @@ export function StepRail({ currentSlug }: { currentSlug: string }) {
                 ) : null}
               </div>
             </div>
-            <div className="rail-list">
-              {steps.map((step, index) => (
-                <Link
-                  key={step.slug}
-                  href={`/guide/${step.slug}`}
-                  className={currentSlug === step.slug ? "current" : undefined}
-                  onClick={() => setOpen(false)}
-                >
-                  <span>{index + 1}</span>
-                  <b>{step.title}</b>
-                  {step.advanced ? <i>A</i> : null}
-                </Link>
-              ))}
-            </div>
-            <div className="rail-help">
-              <span>Need a reference?</span>
-              <a href={EXAMPLE_PATH} target="_blank" rel="noreferrer">
-                Open Meme-ify <ExternalIcon />
-              </a>
-            </div>
+            <nav className="rail-list" aria-label="Workshop steps">
+              {steps.map((step, index) => {
+                const isCurrent = currentSlug === step.slug;
+                return (
+                  <div key={step.slug} className="rail-step-group">
+                    <Link
+                      href={`/guide/${step.slug}`}
+                      className={`rail-step${isCurrent ? " current" : ""}`}
+                      onClick={() => setOpen(false)}
+                      aria-current={isCurrent ? "step" : undefined}
+                    >
+                      <span className="rail-step-number">{index + 1}</span>
+                      <span className="rail-step-label">{step.title}</span>
+                    </Link>
+                    {isCurrent
+                      ? railInstructions.map((instruction) => (
+                          <button
+                            key={instruction.id}
+                            type="button"
+                            className="rail-substep"
+                            onClick={() => scrollToInstruction(instruction.id)}
+                          >
+                            {instruction.title}
+                          </button>
+                        ))
+                      : null}
+                  </div>
+                );
+              })}
+            </nav>
           </>
         )}
       </aside>

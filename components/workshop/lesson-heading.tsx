@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { WorkshopModeToggle } from "./workshop-mode-toggle";
 
 export function LessonHeading({
   kicker,
@@ -24,7 +25,10 @@ export function LessonHeading({
 
   return (
     <div className="lesson-heading">
-      <span className="lesson-kicker">{kicker}</span>
+      <div className="lesson-heading-top">
+        <span className="lesson-kicker">{kicker}</span>
+        <WorkshopModeToggle />
+      </div>
       <h1 ref={headingRef} tabIndex={-1}>
         {title}
       </h1>

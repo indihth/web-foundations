@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AdvancedSection } from "@/components/workshop/advanced-section";
+import { AdvancedStepNote } from "@/components/workshop/advanced-step-note";
 import { Arrow } from "@/components/workshop/icons";
 import { LessonHeading } from "@/components/workshop/lesson-heading";
 import { LessonInstructions } from "@/components/workshop/lesson-instructions";
@@ -62,10 +62,10 @@ export default async function GuideStepPage({
         <b>{progress}%</b>
       </div>
       <LessonHeading kicker={step.kicker} title={step.title} intro={step.intro} />
+      <AdvancedStepNote advanced={step.advanced} />
       <div className="instructions">
         <LessonInstructions step={step} />
       </div>
-      {step.advanced ? <AdvancedSection advanced={step.advanced} /> : null}
       <nav className="lesson-navigation" aria-label="Lesson navigation">
         {previous ? (
           <Link
