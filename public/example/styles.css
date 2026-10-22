@@ -8,6 +8,11 @@
   --input: #4a4a42;
   --font-size-base: 1rem;
   --font-size-min: 0.875rem;
+  --page-gutter: 24px;
+  --card-max: 420px;
+  --content-max: calc(var(--card-max) * 2 + var(--page-gutter));
+  --page-max: calc(var(--content-max) + var(--page-gutter) * 2);
+  --section-gap: 56px;
 }
 
 * {
@@ -25,6 +30,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: clip;
   background: var(--bg);
   color: var(--cream);
   font-family: "Bricolage Grotesque", Arial, sans-serif;
@@ -47,8 +53,7 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin: 0 24px;
-  padding: 20px 0;
+  padding: 20px var(--page-gutter);
   border-bottom: 1px solid var(--border);
 }
 
@@ -69,7 +74,10 @@ header {
 .hero {
   position: relative;
   isolation: isolate;
-  margin: 28px 24px 0;
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 28px auto 0;
+  padding: 0 var(--page-gutter) 12px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -143,19 +151,23 @@ header {
 }
 
 main {
-  margin: 24px;
+  width: 100%;
+  max-width: var(--page-max);
+  margin: var(--section-gap) auto 0;
+  padding: 32px var(--page-gutter) 48px;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: var(--page-gutter);
   align-items: flex-start;
-  justify-content: center;
-  padding-bottom: 48px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--card);
 }
 
 .card {
   flex: 1 1 300px;
-  max-width: 420px;
-  background: var(--card);
+  max-width: var(--card-max);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 28px;
   padding: 28px;
@@ -227,10 +239,13 @@ input[type="range"] {
 }
 
 .preview img {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
   display: block;
-  min-height: 280px;
   object-fit: cover;
+  object-position: center;
 }
 
 .empty {
@@ -282,4 +297,128 @@ input:focus-visible,
 label:focus-within {
   outline: 2px solid var(--green);
   outline-offset: 3px;
+}
+
+/* Tablet / p5 editor preview (~half a laptop screen) */
+@media (max-width: 959px) {
+  :root {
+    --page-gutter: 16px;
+    --section-gap: 36px;
+  }
+
+  header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .pill {
+    font-size: 0.875rem;
+    padding: 7px 14px;
+  }
+
+  .hero {
+    margin-top: 20px;
+    padding-inline: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 11vw, 4.25rem);
+  }
+
+  .hero::before {
+    left: 8px;
+    top: 16px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .hero::after {
+    right: 12px;
+    top: 48px;
+    width: 28px;
+    height: 56px;
+  }
+
+  .hero-note {
+    max-width: none;
+    font-size: 1rem;
+  }
+
+  .brace {
+    font-size: 2.25rem;
+  }
+
+  main {
+    padding: 20px var(--page-gutter) 32px;
+    border-radius: 22px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: none;
+    width: 100%;
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .preview {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 560px) {
+  .banner {
+    font-size: 0.875rem;
+    padding: 10px 12px;
+  }
+
+  header {
+    gap: 10px;
+  }
+
+  .hero {
+    padding-inline: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 13vw, 3.25rem);
+  }
+
+  .hero-note {
+    align-items: flex-start;
+    line-height: 1.45;
+  }
+
+  main {
+    padding-top: 16px;
+    padding-bottom: 28px;
+  }
+
+  .card {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  input[type="text"] {
+    min-height: 48px;
+    padding: 0 14px;
+  }
+
+  .upload {
+    min-height: 52px;
+    font-size: 0.9375rem;
+  }
+
+  .preview {
+    min-height: 240px;
+  }
+
+  .meme-top,
+  .meme-bottom {
+    padding: 10px 12px;
+  }
 }

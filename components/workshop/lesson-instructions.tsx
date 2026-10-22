@@ -207,8 +207,8 @@ function FinishInstructions({
       >
         <p>
           Open the finished Memeo app beside your sketch. Your page may skip the
-          empty-state message. That is fine for today. The finished site still
-          has a text-size slider if you did not add one in the last step.
+          empty-state message. That is fine for today. When you are ready, use
+          the next step in the guide for an optional text-size slider activity.
         </p>
       </Instruction>
       <div className="end-resources">

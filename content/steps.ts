@@ -128,12 +128,14 @@ const FORM_CARD_BOTTOM_PLACEMENT = `<section class="card">
 const PREVIEW_MEME_PLACEMENT = `<div class="preview">
   <img src="https://picsum.photos/200" alt="Your meme">
 
-  // add code here
+  // Add code here
 
 </div>`;
 
 const DRAW_READ_TOP_JS = `let topText = topWords();
 console.log(topText);`;
+
+const WRITE_ON_IMAGE_CALL_SYNTAX_JS = `writeOnImage(top, bottom, size);`;
 
 const DRAW_WRITE_ON_IMAGE_JS = `let topText = topWords();
 let bottomText = bottomWords();
@@ -456,7 +458,6 @@ export const steps: Step[] = [
         title: "Copy the preview block.",
         body: [
           "Below the hero, paste this code block.",
-          "No id on the image yet, and no extra paragraphs inside the preview box. Those come later.",
         ],
         code: {
           label: "HTML · index.html",
@@ -469,21 +470,27 @@ export const steps: Step[] = [
         title: "What goes in src?",
         body: [
           "Notice the `<img>` tag attributes here, `src=\"\"` and `alt=\"Your meme\"`. What might these mean?",
-          "Answer: 'src' stands for source, where the image comes from. It takes the 'path', the address of where the file lives on your computer, or a URL. You can display almost any image you can find on the internet here, if you find the proper URL. For now, we'll use a website that provides sample images for developers.",
-          "Paste this URL inside the 'src' attribute: `https://picsum.photos/200`. Your code should now look like this:",
         ],
-        code: {
-          label: "HTML · the img line",
-          source: PREVIEW_IMG_SRC,
-          copyable: true,
-          highlights: ["https://picsum.photos/200"],
+        reveal: {
+          triggerLabel: "Show the answer",
+          hideLabel: "Hide the answer",
+          body: [
+            "'src' stands for source, where the image comes from. It takes the 'path', the address of where the file lives on your computer, or a URL. You can display almost any image you can find on the internet here, if you find the proper URL. For now, we'll use a website that provides sample images for developers. It'll return a new image every time you refresh the page.",
+            "Paste this URL inside the 'src' attribute: `https://picsum.photos/200`. Your code should now look like this:",
+          ],
+          code: {
+            label: "HTML · the img line",
+            source: PREVIEW_IMG_SRC,
+            copyable: false,
+            highlights: ["https://picsum.photos/200"],
+          },
         },
       },
       {
         number: "3",
         title: "Preview the image.",
         body: [
-          "Preview the changes. If you don't see an image, check that the full URL was copied inside the quotes `\" \"`. Does your 'src' attribute have the equals? `src=\"\"`? Do you have the closing `>` ?",
+          "Preview the changes. If you don't see an image, check that the full URL was pasted inside the src quotes `\" \"`. Does your 'src' attribute have the equals? `src=\"\"`? Do you have the closing `>` ?",
         ],
       },
     ],
@@ -508,7 +515,7 @@ export const steps: Step[] = [
         title: "Add the top text field.",
         body: [
           "To create a text input field, we need two things. A label for the input and the input itself (the box you type into). The `<label>` tag takes the attribute `for=\"\"`, this ties it to the correct input.",
-          "Inside `<main>`, add a new `<section class=\"card\">` above your preview card. Paste this block of code below the code for the hero section.",
+          "Paste this block of code directly below the starting `<main>` tag, above your preview card.",
         ],
         code: {
           label: "HTML · index.html",
@@ -518,9 +525,9 @@ export const steps: Step[] = [
       },
       {
         number: "2",
-        title: "Try the input.",
+        title: "Preview changes and try the input.",
         body: [
-          "Preview your changes and type something into your new input.",
+          "Preview your changes, your page should look like this now. The new input should be on the left, the image preview on the right. Try typing something into your new input.",
         ],
       },
     ],
@@ -551,6 +558,7 @@ export const steps: Step[] = [
           source: DRAW_READ_TOP_JS,
           copyable: false,
         },
+        explained: "Pay attention to the case of the variable names and functions. Code is case sensitive, so 'myVariable' is not the same as 'myvariable'.",
         advanced: {
           omitCode: true,
           body: [
@@ -562,14 +570,16 @@ export const steps: Step[] = [
         number: "2",
         title: "Watch the console.",
         body: [
-          "Run this code the same way you ran before. Type something into your input and watch the 'Console' below your code editor. It will start printing out whatever you type. Now we have a way to store the top line text.",
+          "Run this code and type something into your input. Watch the 'Console' below your code editor. It will start printing out whatever you type. Now we have a way to store the top line text.",
         ],
+        tip: "To stop the console from printing, press the 'Stop' button beside the 'Play' button.",
       },
+      
       {
         number: "3",
-        title: "Add the bottom text field.",
+        title: "Add the bottom text field in HTML.",
         body: [
-          "Now add the HTML for the 2nd input field called 'bottom'. Add it between the previous `<input>` tag and the closing `</section>` tag.",
+          "Back in your `index.html` file, add the HTML for the 2nd input field called 'bottom'. Add it between the previous `<input>` tag and the closing `</section>` tag.",
         ],
         code: {
           label: "HTML · add inside your form card",
@@ -580,13 +590,14 @@ export const steps: Step[] = [
           label: "HTML · where the bottom field goes",
           source: FORM_CARD_BOTTOM_PLACEMENT,
           copyable: false,
+          highlights: ["// Add code here"],
         },
       },
       {
         number: "4",
         title: "Read both text boxes.",
         body: [
-          "Try editing the `sketch.js` file to print out the bottom text as well as the top. Keep `topText` from `topWords()` and add `bottomText` using `bottomWords()`. Use console.log so you can see both values in the console.",
+          "Try editing the `sketch.js` file to print out the bottom text as well as the top. Just like with `topWords()` there's a function called `bottomWords()`. How would you print the bottom text to the console as well?",
         ],
         advanced: {
           omitCode: true,
@@ -609,30 +620,54 @@ export const steps: Step[] = [
     summary: "Call the helper that puts your text on the picture.",
     kicker: "Build your page",
     intro:
-      "Time to make the text display on our image. There is a custom function that will do this for us, `writeOnImage()`. This function lives in the `helpers.js` file, have a look at it if you're interested in how it works.",
+      "Time to make the text display on our image. A function called `writeOnImage()` will do this for us.",
     variant: "standard",
     instructions: [
       {
         number: "1",
-        title: "Call writeOnImage.",
+        title: "Calling a function with arguments.",
         body: [
-          "Inside draw(), after your two variables, call writeOnImage. It expects your top text and bottom text in order.",
-          "You can remove the console.log lines if you like.",
+          "You have already called functions like `topWords()` and `console.log(something)`. The values inside the parentheses are arguments — information you pass in so the function can use it.",
+          "`writeOnImage()` takes arguments too. It uses them to put your meme text on the picture: first the top line, then the bottom line. You will add a third argument for text size later.",
+          "In `draw()` you already read the inputs into variables. When you call `writeOnImage(...)`, what should you put inside the parentheses?",
         ],
         code: {
-          label: "JavaScript · sketch.js · inside draw()",
-          source: DRAW_WRITE_ON_IMAGE_JS,
+          label: "JavaScript · calling writeOnImage",
+          source: WRITE_ON_IMAGE_CALL_SYNTAX_JS,
           copyable: false,
+          highlights: ["top", "bottom", "size"],
         },
         advanced: {
-          omitCode: true,
+          body: [
+            "Pass your `topText` and `bottomText` variables as the first two arguments, in that order.",
+          ],
+        },
+      },
+      {
+        number: "2",
+        title: "Call writeOnImage.",
+        body: [
+          "Inside `draw()`, after your two variables, call `writeOnImage` with those variables as arguments, in the same order as the parameters: top text first, then bottom text.",
+          "Remove the `console.log` lines, we do not need them anymore.",
+        ],
+        reveal: {
+          triggerLabel: "Show the answer",
+          hideLabel: "Hide the answer",
+          body: ["Your `draw()` code should look like this:"],
+          code: {
+            label: "JavaScript · sketch.js · inside draw()",
+            source: DRAW_WRITE_ON_IMAGE_JS,
+            copyable: false,
+          },
+        },
+        advanced: {
           body: [
             "Call writeOnImage(topText, bottomText) after your variables, or set `.textContent` on the overlay paragraphs yourself.",
           ],
         },
       },
       {
-        number: "2",
+        number: "3",
         title: "Add the meme lines in HTML.",
         body: [
           "Inside your preview div, below the img, add two empty p elements. Use the class names below so style.css can position the meme text.",
@@ -648,10 +683,11 @@ export const steps: Step[] = [
           label: "HTML · where to add the new code",
           source: PREVIEW_MEME_PLACEMENT,
           copyable: false,
+          highlights: ["// Add code here"],
         },
       },
       {
-        number: "3",
+        number: "4",
         title: "Try it.",
         body: [
           "Run the changes. What happens when you write in the input fields now? Are they working? Why not?",
@@ -679,8 +715,8 @@ export const steps: Step[] = [
         title: "Why the words did not show.",
         body: [
           "The p tags are in the right place, but writeOnImage() looks them up by id. Without matching ids, it has nothing to update.",
-          "Can you figure out which ids to add? Check helpers.js or the next reveal if you are stuck.",
         ],
+        challenge: "Can you figure out which ids to add? Check helpers.js or the next reveal if you are stuck.",
         advanced: {
           body: [
             "writeOnImage() uses getElementById with fixed id strings. Without those ids on your p tags, the function runs but cannot set `.textContent` on the lines.",
@@ -749,11 +785,17 @@ export const steps: Step[] = [
         body: [
           "Save and refresh the page so helpers.js can find the new input. Choose an image from your computer.",
           "The sample picture in the preview does not change. Why do you think that is?",
-          "Challenge: Try and get the upload image to display... it's the same issue we had with the text displaying.",
-          "You do not add another listener in sketch.js. memeoBoot() in helpers.js already connects the button.",
+         ],
+         challenge: "Try and get the upload image to display... it's the same issue we had when trying to display the text. Check the `<img>` tag, what's missing?",       
+      },
+      {
+        number: "3",
+        title: "Try upload again.",
+        body: [
+          "Save and refresh. Choose an image again. It should replace the sample in the preview.",
         ],
         reveal: {
-          triggerLabel: "Reveal answer",
+          triggerLabel: "Reveal previous answer",
           hideLabel: "Hide the answer",
           body: [
             "Add id=\"preview\" on the img inside your preview div. Keep the same src value you added earlier.",
@@ -766,13 +808,6 @@ export const steps: Step[] = [
           },
         },
       },
-      {
-        number: "3",
-        title: "Try upload again.",
-        body: [
-          "Save and refresh. Choose an image again. It should replace the sample in the preview.",
-        ],
-      },
     ],
     advanced: {
       title: "pictureOf() and showUploadedImage()",
@@ -784,12 +819,27 @@ export const steps: Step[] = [
     },
   },
   {
+    slug: "keep-going",
+    title: "Keep going",
+    summary: "What to try after the workshop.",
+    kicker: "Finish & explore",
+    intro: "What to try after the workshop.",
+    variant: "finish",
+    instructions: [],
+    advanced: {
+      title: "applyMemeTextSize",
+      body: [
+        "applyMemeTextSize in helpers.js turns the size number into pixel sizes and updates the slider label (sizeLabel). Reading it is optional; rewriting it is not part of the class.",
+      ],
+    },
+  },
+  {
     slug: "add-text-size",
     title: "Add text size",
-    summary: "Figure out how to add a size slider and resize the meme text.",
-    kicker: "Build your page",
+    summary: "Optional: add a size slider and resize the meme text.",
+    kicker: "Extra activity",
     intro:
-      "Your meme works, but the text stays one size. This step is mostly for you to figure out. You already know how to add inputs and read them in sketch.js.",
+      "The main workshop is done. If you want to go further, the finished Memeo app also has a text-size slider. You already know how to add inputs and read them in sketch.js — see if you can wire this one up.",
     variant: "standard",
     instructions: [
       {
@@ -825,21 +875,6 @@ export const steps: Step[] = [
       title: "fontSize()",
       body: [
         "`fontSize()` uses getElementById(\"size\") and `Number(...)` on `.value`. The slider needs `id=\"size\"`. The call becomes writeOnImage with top text, bottom text, then size. `applyMemeTextSize` in helpers.js also updates the label when `id=\"sizeLabel\"` is on the slider label.",
-      ],
-    },
-  },
-  {
-    slug: "keep-going",
-    title: "Keep going",
-    summary: "What to try after the workshop.",
-    kicker: "Finish & explore",
-    intro: "What to try after the workshop.",
-    variant: "finish",
-    instructions: [],
-    advanced: {
-      title: "applyMemeTextSize",
-      body: [
-        "applyMemeTextSize in helpers.js turns the size number into pixel sizes and updates the slider label (sizeLabel). Reading it is optional; rewriting it is not part of the class.",
       ],
     },
   },
