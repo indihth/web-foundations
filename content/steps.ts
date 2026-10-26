@@ -121,14 +121,15 @@ const FORM_CARD_BOTTOM_PLACEMENT = `<section class="card">
   <label for="top">Top text</label>
   <input id="top" type="text" placeholder="When the code finally runs">
 
-  // Add code here
-
+  <label for="bottom">Bottom text</label>
+<input id="bottom" type="text" placeholder="And you still do not know why">
 </section>`;
 
 const PREVIEW_MEME_PLACEMENT = `<div class="preview">
   <img src="https://picsum.photos/200" alt="Your meme">
 
-  // Add code here
+  <p class="meme-top"></p>
+  <p class="meme-bottom"></p>
 
 </div>`;
 
@@ -322,8 +323,8 @@ export const steps: Step[] = [
         title: "Preview your changes.",
         body: [
           "Preview your changes. Notice that the two new elements that sit inside the `<header>` tag are in a row, with a light border below. The template sketch we are using has some default styling already setup.",
-           ],
-        challenge: "Look through the files `style.css` and find where it says `header {` — the code inside those curly braces is the styling that gets applied to the `<header>` tag. What is the styling applied to the `<header>` tag?",
+        ],
+        challenge: "Look through the files `style.css` and find where it says `header {` the code inside those curly braces is the styling that gets applied to the `<header>` tag. What is the styling applied to the `<header>` tag?",
       },
     ],
     advanced: {
@@ -574,7 +575,7 @@ export const steps: Step[] = [
         ],
         tip: "To stop the console from printing, press the 'Stop' button beside the 'Play' button.",
       },
-      
+
       {
         number: "3",
         title: "Add the bottom text field in HTML.",
@@ -582,15 +583,11 @@ export const steps: Step[] = [
           "Back in your `index.html` file, add the HTML for the 2nd input field called 'bottom'. Add it between the previous `<input>` tag and the closing `</section>` tag.",
         ],
         code: {
-          label: "HTML · add inside your form card",
-          source: BOTTOM_INPUT_HTML,
-          copyable: false,
-        },
-        codeSecondary: {
           label: "HTML · where the bottom field goes",
           source: FORM_CARD_BOTTOM_PLACEMENT,
           copyable: false,
-          highlights: ["// Add code here"],
+          highlights: [` <label for="bottom">Bottom text</label>
+<input id="bottom" type="text" placeholder="And you still do not know why">`],
         },
       },
       {
@@ -627,7 +624,7 @@ export const steps: Step[] = [
         number: "1",
         title: "Calling a function with arguments.",
         body: [
-          "You have already called functions like `topWords()` and `console.log(something)`. The values inside the parentheses are arguments — information you pass in so the function can use it.",
+          "You have already called functions like `topWords()` and `console.log(something)`. The values inside the parentheses are arguments, information you pass in so the function can use it.",
           "`writeOnImage()` takes arguments too. It uses them to put your meme text on the picture: first the top line, then the bottom line. You will add a third argument for text size later.",
           "In `draw()` you already read the inputs into variables. When you call `writeOnImage(...)`, what should you put inside the parentheses?",
         ],
@@ -675,15 +672,9 @@ export const steps: Step[] = [
         ],
         code: {
           label: "HTML · index.html · inside .preview",
-          source: MEME_P_LINES_NO_IDS,
-          copyable: true,
-          highlights: ["meme-top", "meme-bottom"],
-        },
-        codeSecondary: {
-          label: "HTML · where to add the new code",
           source: PREVIEW_MEME_PLACEMENT,
           copyable: false,
-          highlights: ["// Add code here"],
+          highlights: ["meme-top", "meme-bottom"],
         },
       },
       {
@@ -785,8 +776,8 @@ export const steps: Step[] = [
         body: [
           "Save and refresh the page so helpers.js can find the new input. Choose an image from your computer.",
           "The sample picture in the preview does not change. Why do you think that is?",
-         ],
-         challenge: "Try and get the upload image to display... it's the same issue we had when trying to display the text. Check the `<img>` tag, what's missing?",       
+        ],
+        challenge: "Try and get the upload image to display... it's the same issue we had when trying to display the text. Check the `<img>` tag, what's missing?",
       },
       {
         number: "3",
@@ -839,7 +830,7 @@ export const steps: Step[] = [
     summary: "Optional: add a size slider and resize the meme text.",
     kicker: "Extra activity",
     intro:
-      "The main workshop is done. If you want to go further, the finished Memeo app also has a text-size slider. You already know how to add inputs and read them in sketch.js — see if you can wire this one up.",
+      "The main workshop is done. If you want to go further, the finished Memeo app also has a text-size slider. You already know how to add inputs and read them in sketch.js, see if you can wire this one up.",
     variant: "standard",
     instructions: [
       {
@@ -848,6 +839,7 @@ export const steps: Step[] = [
         body: [
           "In the form card, under the bottom text field, add another input. HTML has an input type for sliders: use `type=\"range\"`. Range inputs also take `min` and `max` attributes to set the smallest and largest values.",
         ],
+        tip: "Check the W3Schools reference for HTML inputs: https://www.w3schools.com/tags/att_input_type_range.asp",
       },
       {
         number: "2",

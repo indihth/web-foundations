@@ -40,7 +40,6 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <Link className="brand" href="/">
-        <span className="brand-mark">I</span>
         <span>
           IADT Computing: <b>Taster Session</b>
         </span>

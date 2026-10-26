@@ -1,6 +1,12 @@
 import Link from "next/link";
+import exampleSite from "@/assets/example-site.png";
 import { steps } from "@/content/steps";
-import { EXAMPLE_PATH, SKETCH_URL } from "@/lib/workshop-urls";
+import {
+  CS50_URL,
+  EXAMPLE_PATH,
+  P5_EXAMPLES_URL,
+  SKETCH_URL,
+} from "@/lib/workshop-urls";
 import { Arrow, ExternalIcon } from "@/components/workshop/icons";
 
 export default function Home() {
@@ -46,25 +52,20 @@ export default function Home() {
                 Open site <ExternalIcon />
               </em>
             </div>
-            <div
-              className="example-placeholder"
-              aria-label="Placeholder preview of the finished Meme-ify website"
-            >
+            <div className="example-placeholder">
               <div className="placeholder-browser">
                 <div className="placeholder-bar">
                   <i />
                   <i />
                   <i />
                 </div>
-                <div className="placeholder-meme">
-                  <span>YOUR MEME</span>
-                  <div>
-                    IMAGE
-                    <br />
-                    PREVIEW
-                  </div>
-                  <b>GOES HERE</b>
-                </div>
+                <img
+                  className="placeholder-shot"
+                  src={exampleSite.src}
+                  width={exampleSite.width}
+                  height={exampleSite.height}
+                  alt="Finished Meme-ify website"
+                />
               </div>
             </div>
             <div className="card-caption">
@@ -132,9 +133,7 @@ export default function Home() {
           <p>
             You’ll build the page in the online <b>p5.js editor</b>: type HTML
             in index.html, call helper functions from sketch.js, and use class
-            names from the provided stylesheet. No CSS to write today. On each
-            step, switch to Advanced to use document.getElementById instead of
-            the helpers.
+            names from the provided stylesheet.
           </p>
           <a href={SKETCH_URL} target="_blank" rel="noreferrer">
             Visit the p5.js editor <ExternalIcon />
@@ -144,25 +143,33 @@ export default function Home() {
 
       <section className="resource-strip">
         <div className="resource-note">
-          <span>Two useful links</span>
+          <span>Go further</span>
           <p>
-            The example is your goal. You’ll save a copy of the template in step
-            1.
+            A full course, and a set of small projects, for when you want more
+            than today’s page.
           </p>
         </div>
-        <a className="resource-link" href={EXAMPLE_PATH} target="_blank" rel="noreferrer">
+        <a className="resource-link" href={CS50_URL} target="_blank" rel="noreferrer">
           <span className="resource-number">01</span>
           <span>
-            <b>Open the finished app</b>
-            <small>Compare your work at any time</small>
+            <b>Harvard CS50</b>
+            <small>
+              A well-rounded intro to computing that’s actually interesting, and
+              great prep for any computing course.
+            </small>
           </span>
           <ExternalIcon />
         </a>
-        <a className="resource-link" href={SKETCH_URL} target="_blank" rel="noreferrer">
+        <a
+          className="resource-link"
+          href={P5_EXAMPLES_URL}
+          target="_blank"
+          rel="noreferrer"
+        >
           <span className="resource-number">02</span>
           <span>
-            <b>Open the p5.js sketch</b>
-            <small>Workshop template to copy in step 1</small>
+            <b>p5.js examples</b>
+            <small>Smaller starter projects you can open and change.</small>
           </span>
           <ExternalIcon />
         </a>
