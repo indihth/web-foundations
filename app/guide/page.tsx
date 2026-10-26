@@ -28,8 +28,7 @@ export default function GuideIndexPage() {
         </div>
         <p>
           Start at the beginning or jump back into any step. Use Regular for
-          helper functions, or switch to Advanced on a step to use
-          document.getElementById yourself.
+          helper functions.
         </p>
       </div>
       <div className="step-table">
