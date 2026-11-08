@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+// import { WorkshopModeToggle } from "./workshop-mode-toggle";
 
 export function LessonHeading({
   kicker,
@@ -28,11 +29,7 @@ export function LessonHeading({
     <div className="lesson-heading">
       <div className="lesson-heading-top">
         <span className="lesson-kicker">{kicker}</span>
-        {versionLabel ? (
-          <span className="guide-version-pill" aria-label={`Guide: ${versionLabel}`}>
-            {versionLabel}
-          </span>
-        ) : null}
+        {/* <WorkshopModeToggle /> */}
       </div>
       <h1 ref={headingRef} tabIndex={-1}>
         {title}

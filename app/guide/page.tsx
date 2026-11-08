@@ -28,9 +28,8 @@ export default function GuideChooserPage() {
           </h1>
         </div>
         <p>
-          Same meme page, two ways to connect HTML to sketch.js. Choose one
-          track for the whole session ,  your facilitator will tell you which
-          link to use.
+          Start at the beginning or jump back into any step. Use Regular for
+          helper functions.
         </p>
       </div>
       <div
