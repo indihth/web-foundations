@@ -1,4 +1,4 @@
-import type { InstructionBlock, Step } from "@/content/steps";
+import type { Step } from "@/content/steps";
 
 export function instructionSectionId(slug: string, number: string) {
   return `${slug}-instruction-${number}`;
@@ -10,20 +10,7 @@ export type RailInstruction = {
   id: string;
 };
 
-function resolveInstructionTitle(
-  block: InstructionBlock,
-  advancedMode: boolean,
-): string {
-  if (advancedMode && block.advanced?.title) {
-    return block.advanced.title;
-  }
-  return block.title;
-}
-
-export function getStepRailInstructions(
-  step: Step,
-  advancedMode: boolean,
-): RailInstruction[] {
+export function getStepRailInstructions(step: Step): RailInstruction[] {
   if (step.variant === "finish") {
     return [
       {
@@ -41,7 +28,7 @@ export function getStepRailInstructions(
 
   return step.instructions.map((block) => ({
     number: block.number,
-    title: resolveInstructionTitle(block, advancedMode),
+    title: block.title,
     id: instructionSectionId(step.slug, block.number),
   }));
 }

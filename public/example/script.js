@@ -48,7 +48,6 @@ function showUploadedImage() {
   const photo = document.getElementById("photo");
   const preview = document.getElementById("preview");
   const empty = document.getElementById("empty");
-  if (!photo || !preview) return;
 
   const url = pictureOf(photo);
   if (!url) return;

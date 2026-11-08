@@ -1,35 +1,38 @@
 import type { StaticImageData } from "next/image";
+import type { GuideVersionId } from "@/lib/workshop-versions";
 
 const screenshots = import.meta.glob(
   [
-    "/assets/guide-screenshots/*.png",
-    "/assets/guide-screenshots/*.jpg",
-    "/assets/guide-screenshots/*.jpeg",
-    "/assets/guide-screenshots/*.webp",
-    "/assets/guide-screenshots/*.gif",
-    "/assets/guide-screenshots/*.avif",
+    "/assets/guide-screenshots/helpers/*.{png,jpg,jpeg,webp,gif,avif}",
+    "/assets/guide-screenshots/dom/*.{png,jpg,jpeg,webp,gif,avif}",
   ],
   { eager: true, import: "default" },
 ) as Record<string, StaticImageData>;
 
 const extensionOrder = [".png", ".jpg", ".jpeg", ".webp", ".gif", ".avif"];
 
-const byStep = new Map<string, StaticImageData>();
+const byVersionAndStem = new Map<string, StaticImageData>();
 for (const [filePath, image] of Object.entries(screenshots).sort(([a], [b]) => {
   const rank = (file: string) => {
-    const extension = extensionOrder.findIndex((item) => file.toLowerCase().endsWith(item));
+    const extension = extensionOrder.findIndex((item) =>
+      file.toLowerCase().endsWith(item),
+    );
     return extension === -1 ? extensionOrder.length : extension;
   };
   return rank(a) - rank(b);
 })) {
-  const filename = filePath.split("/").pop() ?? "";
+  const parts = filePath.split("/");
+  const version = parts[parts.length - 2];
+  const filename = parts[parts.length - 1] ?? "";
   const stem = filename.replace(/\.[^.]+$/, "");
-  if (!byStep.has(stem)) {
-    byStep.set(stem, image);
+  const key = `${version}/${stem}`;
+  if (!byVersionAndStem.has(key)) {
+    byVersionAndStem.set(key, image);
   }
 }
 
 export function loadGuideScreenshot(
+  version: GuideVersionId,
   stepNumber: number,
   instructionNumber: string,
 ): StaticImageData | null {
@@ -40,5 +43,5 @@ export function loadGuideScreenshot(
     return null;
   }
 
-  return byStep.get(`${stepNumber}-${instructionNumber}`) ?? null;
+  return byVersionAndStem.get(`${version}/${stepNumber}-${instructionNumber}`) ?? null;
 }

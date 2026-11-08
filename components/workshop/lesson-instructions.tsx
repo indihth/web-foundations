@@ -1,15 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import {
-  steps,
-  type InstructionBlock,
-  type Step,
-} from "@/content/steps";
-import { useWorkshopMode } from "@/lib/workshop-mode";
+import { type InstructionBlock, type Step } from "@/content/steps";
 import { instructionSectionId } from "@/lib/instruction-rail";
 import { loadGuideScreenshot } from "@/lib/guide-screenshots";
-import { EXAMPLE_PATH, SKETCH_URL } from "@/lib/workshop-urls";
+import {
+  GUIDE_VERSIONS,
+  type GuideVersionId,
+} from "@/lib/workshop-versions";
+import { DOM_SKETCH_URL, EXAMPLE_PATH, SKETCH_URL } from "@/lib/workshop-urls";
 import { CodeBlock } from "./code-block";
 import { ExternalIcon } from "./icons";
 import { KeyboardSymbolsDiagram } from "./keyboard-symbols-diagram";
@@ -20,6 +19,7 @@ import {
 } from "./instruction-text";
 
 function Instruction({
+  version,
   stepSlug,
   stepNumber,
   number,
@@ -27,6 +27,7 @@ function Instruction({
   children,
   afterScreenshot,
 }: {
+  version: GuideVersionId;
   stepSlug: string;
   stepNumber: number;
   number: string;
@@ -34,7 +35,7 @@ function Instruction({
   children: React.ReactNode;
   afterScreenshot?: React.ReactNode;
 }) {
-  const screenshot = loadGuideScreenshot(stepNumber, number);
+  const screenshot = loadGuideScreenshot(version, stepNumber, number);
 
   return (
     <section
@@ -111,33 +112,6 @@ function InstructionLink({
   );
 }
 
-function resolveInstruction(
-  block: InstructionBlock,
-  advancedMode: boolean,
-): {
-  title: string;
-  body: string[];
-  code: InstructionBlock["code"];
-  codeSecondary: InstructionBlock["codeSecondary"];
-} {
-  if (!advancedMode || !block.advanced) {
-    return {
-      title: block.title,
-      body: block.body,
-      code: block.code,
-      codeSecondary: block.codeSecondary,
-    };
-  }
-  const override = block.advanced;
-  const hideCode = override.omitCode === true;
-  return {
-    title: override.title ?? block.title,
-    body: override.body ?? block.body,
-    code: hideCode ? undefined : block.code,
-    codeSecondary: hideCode ? undefined : block.codeSecondary,
-  };
-}
-
 function InstructionCodeBlocks({
   code,
   codeSecondary,
@@ -168,13 +142,23 @@ function InstructionCodeBlocks({
 }
 
 function FinishInstructions({
+  version,
   stepSlug,
   stepNumber,
 }: {
+  version: GuideVersionId;
   stepSlug: string;
   stepNumber: number;
 }) {
-  const { advanced: advancedMode } = useWorkshopMode();
+  const isDom = version === "dom";
+  const starterHref = isDom
+    ? DOM_SKETCH_URL || EXAMPLE_PATH
+    : SKETCH_URL;
+  const starterLabel = isDom
+    ? DOM_SKETCH_URL
+      ? "Open the DOM template sketch"
+      : "Open the finished example"
+    : "Open the p5.js sketch";
 
   return (
     <>
@@ -182,33 +166,35 @@ function FinishInstructions({
         <span>Workshop complete</span>
         <h2>You built a meme page.</h2>
         <p>
-          {advancedMode
-            ? "You typed HTML in the p5.js editor, used class names from a provided stylesheet, and used document.getElementById in sketch.js (or read how the helpers do the same in helpers.js). That is a solid two hours."
+          {isDom
+            ? "You typed HTML in the p5.js editor, used class names from a provided stylesheet, and connected the page with document.getElementById in sketch.js. That is a solid two hours."
             : "You typed HTML in the p5.js editor, used class names from a provided stylesheet, and called helper functions from sketch.js. That is a solid two hours."}
         </p>
       </div>
       <Instruction
+        version={version}
         stepSlug={stepSlug}
         stepNumber={stepNumber}
         number="1"
         title="Make it yours."
       >
         <p>
-          {advancedMode
-            ? "Change the words, try another photo, or open helpers.js and compare your getElementById calls with the helper functions. Small experiments are one of the best ways to learn what code does."
+          {isDom
+            ? "Change the words, try another photo, or experiment with what happens when you change an id or a getElementById string. Small experiments are one of the best ways to learn what code does."
             : "Change the words, try another photo, or open helpers.js and read how the functions work. Small experiments are one of the best ways to learn what code does."}
         </p>
       </Instruction>
       <Instruction
+        version={version}
         stepSlug={stepSlug}
         stepNumber={stepNumber}
         number="2"
         title="Compare with the example."
       >
         <p>
-          Open the finished Memeo app beside your sketch. Your page may skip the
-          empty-state message. That is fine for today. When you are ready, use
-          the next step in the guide for an optional text-size slider activity.
+          {isDom
+            ? "Open the finished Memeo app beside your sketch. The example also has a top banner bar that this track did not build ,  that is fine. When you are ready, use the next step in the guide for an optional text-size slider activity."
+            : "Open the finished Memeo app beside your sketch. Your page may skip the empty-state message. That is fine for today. When you are ready, use the next step in the guide for an optional text-size slider activity."}
         </p>
       </Instruction>
       <div className="end-resources">
@@ -217,9 +203,9 @@ function FinishInstructions({
           <b>Open Memeo</b>
           <ExternalIcon />
         </a>
-        <a href={SKETCH_URL} target="_blank" rel="noreferrer">
+        <a href={starterHref} target="_blank" rel="noreferrer">
           <span>Your starter file</span>
-          <b>Open the p5.js sketch</b>
+          <b>{starterLabel}</b>
           <ExternalIcon />
         </a>
       </div>
@@ -228,28 +214,26 @@ function FinishInstructions({
 }
 
 function StandardInstructions({
+  version,
   step,
   stepNumber,
 }: {
+  version: GuideVersionId;
   step: Step;
   stepNumber: number;
 }) {
-  const { advanced: advancedMode } = useWorkshopMode();
-
   return (
     <>
-      {step.instructions.map((block) => {
-        const resolved = resolveInstruction(block, advancedMode);
-        return (
+      {step.instructions.map((block) => (
         <Instruction
           key={block.title}
+          version={version}
           stepSlug={step.slug}
           stepNumber={stepNumber}
           number={block.number}
-          title={resolved.title}
+          title={block.title}
           afterScreenshot={
-            !(advancedMode && block.advanced?.omitCode) &&
-            (block.tip || block.challenge) ? (
+            block.tip || block.challenge ? (
               <>
                 {block.tip ? (
                   <Tip>{renderInstructionText(block.tip)}</Tip>
@@ -261,15 +245,14 @@ function StandardInstructions({
             ) : null
           }
         >
-          {resolved.body.map((paragraph) => (
+          {block.body.map((paragraph) => (
             <InstructionParagraph key={paragraph} text={paragraph} />
           ))}
           <InstructionCodeBlocks
-            code={resolved.code}
-            codeSecondary={resolved.codeSecondary}
+            code={block.code}
+            codeSecondary={block.codeSecondary}
           />
-          {block.explained &&
-          !(advancedMode && block.advanced?.omitCode) ? (
+          {block.explained ? (
             <Explained>{renderInstructionText(block.explained)}</Explained>
           ) : null}
           {block.keyboardDiagram ? <KeyboardSymbolsDiagram /> : null}
@@ -282,19 +265,35 @@ function StandardInstructions({
             />
           ) : null}
         </Instruction>
-      );
-      })}
+      ))}
     </>
   );
 }
 
-export function LessonInstructions({ step }: { step: Step }) {
-  const stepNumber = steps.findIndex((item) => item.slug === step.slug) + 1;
+export function LessonInstructions({
+  step,
+  version,
+}: {
+  step: Step;
+  version: GuideVersionId;
+}) {
+  const stepList = GUIDE_VERSIONS[version].steps;
+  const stepNumber = stepList.findIndex((item) => item.slug === step.slug) + 1;
 
   if (step.variant === "finish") {
     return (
-      <FinishInstructions stepSlug={step.slug} stepNumber={stepNumber} />
+      <FinishInstructions
+        version={version}
+        stepSlug={step.slug}
+        stepNumber={stepNumber}
+      />
     );
   }
-  return <StandardInstructions step={step} stepNumber={stepNumber} />;
+  return (
+    <StandardInstructions
+      version={version}
+      step={step}
+      stepNumber={stepNumber}
+    />
+  );
 }

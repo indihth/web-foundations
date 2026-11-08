@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { steps } from "@/content/steps";
-import { EXAMPLE_PATH, SKETCH_URL } from "@/lib/workshop-urls";
-import { Arrow, ExternalIcon } from "@/components/workshop/icons";
+import { Arrow } from "@/components/workshop/icons";
+import {
+  GUIDE_VERSION_IDS,
+  GUIDE_VERSIONS,
+  guideHomePath,
+} from "@/lib/workshop-versions";
 
 export const instant = false;
 
@@ -10,9 +13,7 @@ export const metadata: Metadata = {
   title: "Workshop guide",
 };
 
-export default function GuideIndexPage() {
-  const total = steps.length;
-
+export default function GuideChooserPage() {
   return (
     <main className="guide-index">
       <div className="page-heading">
@@ -21,51 +22,38 @@ export default function GuideIndexPage() {
             <span /> Workshop guide
           </div>
           <h1>
-            {total} steps, one
+            Pick how you
             <br />
-            working meme page.
+            work in JavaScript.
           </h1>
         </div>
         <p>
-          Start at the beginning or jump back into any step. Use Regular for
-          helper functions, or switch to Advanced on a step to use
-          document.getElementById yourself.
+          Same meme page, two ways to connect HTML to sketch.js. Choose one
+          track for the whole session ,  your facilitator will tell you which
+          link to use.
         </p>
       </div>
-      <div className="step-table">
-        <div className="table-label">
-          <span>Steps</span>
-          <span>
-            {total} lessons · about 2 hours
-          </span>
-        </div>
-        {steps.map((step, index) => (
-          <Link
-            key={step.slug}
-            className="step-row"
-            href={`/guide/${step.slug}`}
-          >
-            <span className="step-number">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <span className="step-row-copy">
-              <b>{step.title}</b>
-              <small>{step.summary}</small>
-            </span>
-            <span className="row-arrow">
-              <Arrow />
-            </span>
-          </Link>
-        ))}
-      </div>
-      <div className="guide-resources">
-        <span>Keep these nearby</span>
-        <a href={EXAMPLE_PATH} target="_blank" rel="noreferrer">
-          Finished app <ExternalIcon />
-        </a>
-        <a href={SKETCH_URL} target="_blank" rel="noreferrer">
-          p5.js starter file <ExternalIcon />
-        </a>
+      <div
+        className="guide-version-chooser"
+        role="group"
+        aria-label="Guide version"
+      >
+        {GUIDE_VERSION_IDS.map((id) => {
+          const version = GUIDE_VERSIONS[id];
+          return (
+            <Link
+              key={id}
+              className="guide-version-option"
+              href={guideHomePath(id)}
+            >
+              <span className="guide-version-option-label">{version.label}</span>
+              <p>{version.description}</p>
+              <span className="guide-version-option-action">
+                Open guide <Arrow />
+              </span>
+            </Link>
+          );
+        })}
       </div>
     </main>
   );

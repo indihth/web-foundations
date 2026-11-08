@@ -125,7 +125,7 @@ Save the file and refresh your preview tab. You should see the words, but they w
 
 ### Advanced
 
-**No id on the banner yet** — A `p` is a paragraph. `u` underlines the word inside it. This paragraph has no id, so `getElementById` cannot find it yet.
+**No id on the banner yet** ,  A `p` is a paragraph. `u` underlines the word inside it. This paragraph has no id, so `getElementById` cannot find it yet.
 
 ---
 
@@ -141,7 +141,7 @@ Type the header below the banner (two `div` elements). Save and refresh.
 
 ### Advanced
 
-**Structure without ids** — `header` groups the top of the page. `div` is a plain box for the logo and the label.
+**Structure without ids** ,  `header` groups the top of the page. `div` is a plain box for the logo and the label.
 
 ---
 
@@ -157,7 +157,7 @@ Paste the hero (nested headings, `span`, paragraph). Save and refresh; banner, h
 
 ### Advanced
 
-**Hero HTML tags** — `section`, `h1`, `span` for one piece of a line (`a m<span>!</span>me.`).
+**Hero HTML tags** ,  `section`, `h1`, `span` for one piece of a line (`a m<span>!</span>me.`).
 
 ---
 
@@ -169,7 +169,7 @@ Connect HTML to the provided stylesheet. Add `class="banner"`, header classes (`
 
 ### Advanced
 
-**class vs id** — `class` connects to style.css; `id` names one element for `getElementById`. This step only adds classes.
+**class vs id** ,  `class` connects to style.css; `id` names one element for `getElementById`. This step only adds classes.
 
 ---
 
@@ -181,7 +181,7 @@ Play the sketch and compare banner, header, and hero to the finished example. Cl
 
 ### Advanced
 
-**Matching names exactly** — Same rule later for `getElementById("top")` and `id="top"`.
+**Matching names exactly** ,  Same rule later for `getElementById("top")` and `id="top"`.
 
 ---
 
@@ -191,11 +191,11 @@ Play the sketch and compare banner, header, and hero to the finished example. Cl
 
 Before JavaScript, put the preview on the page. Copy the main/card block; leave `src` empty at first. No id on the image yet, no extra paragraphs inside `.preview`.
 
-**What goes in src?** — Reveal: `https://picsum.photos/200` on the img line. Check the picture in the card.
+**What goes in src?** ,  Reveal: `https://picsum.photos/200` on the img line. Check the picture in the card.
 
 ### Advanced
 
-**src on the img** — `src` is the picture address. The browser loads it into the img tag. You will add more attributes on the preview later.
+**src on the img** ,  `src` is the picture address. The browser loads it into the img tag. You will add more attributes on the preview later.
 
 ---
 
@@ -230,7 +230,7 @@ Save, refresh, type in the top box, open the console. You should see your text p
 
 ### Advanced
 
-**topWords()** — `getElementById("top")`, read `.value`, `console.log(topText)`. No `writeOnImage` on this step.
+**topWords()** ,  `getElementById("top")`, read `.value`, `console.log(topText)`. No `writeOnImage` on this step.
 
 ---
 
@@ -238,7 +238,7 @@ Save, refresh, type in the top box, open the console. You should see your text p
 
 **Slug:** `add-bottom-text`
 
-Add the bottom field in HTML. In draw(), add `bottomText` with `bottomWords()`, then **print both values with `console.log`**. No code block is shown in the guide—students type it.
+Add the bottom field in HTML. In draw(), add `bottomText` with `bottomWords()`, then **print both values with `console.log`**. No code block is shown in the guide, students type it.
 
 Try it: both values in the console; still nothing on the picture.
 
@@ -254,11 +254,11 @@ Same with `getElementById("bottom")` and `.value`.
 
 Paste the upload control at the top of the form card. Save and **refresh**, then choose an image.
 
-The sample picture **does not change**. Ask **why**—do not answer on this step.
+The sample picture **does not change**. Ask **why**, do not answer on this step.
 
 ### Advanced
 
-`showUploadedImage()` / `pictureOf()` — do not mention `id="preview"` yet.
+`showUploadedImage()` / `pictureOf()` ,  do not mention `id="preview"` yet.
 
 ---
 
@@ -272,7 +272,7 @@ Go back to the img in `.preview`. Add `id="preview"`:
 <img id="preview" src="https://picsum.photos/200" alt="Your meme">
 ```
 
-Save, refresh, upload again—the photo replaces the sample.
+Save, refresh, upload again, the photo replaces the sample.
 
 ### Advanced
 
@@ -302,7 +302,7 @@ No `writeOnImage` yet. Slider label does not update until later.
 
 **Slug:** `write-on-image`
 
-Introduce the helper: **three arguments** — top text, bottom text, size.
+Introduce the helper: **three arguments** ,  top text, bottom text, size.
 
 ```javascript
 writeOnImage(topText, bottomText, size);
@@ -338,7 +338,7 @@ Ids `meme-top` / `meme-bottom`, `.textContent`, `applyMemeTextSize`.
 
 **Slug:** `keep-going`
 
-Finish step — optional reading of `applyMemeTextSize` in advanced.
+Finish step ,  optional reading of `applyMemeTextSize` in advanced.
 
 ---
 

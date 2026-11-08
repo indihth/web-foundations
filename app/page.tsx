@@ -79,7 +79,7 @@ export default function Home() {
             </div>
           </a>
 
-          <Link className="home-card guide-card" href={`/guide/${firstStep.slug}`}>
+          <Link className="home-card guide-card" href="/guide">
             <div className="card-topline">
               <span>
                 <b>02</b> Build it step by step
@@ -131,10 +131,10 @@ export default function Home() {
           <span>How we’ll work</span>
           <p>
             You’ll build the page in the online <b>p5.js editor</b>: type HTML
-            in index.html, call helper functions from sketch.js, and use class
-            names from the provided stylesheet. No CSS to write today. On each
-            step, switch to Advanced to use document.getElementById instead of
-            the helpers.
+            in index.html, work with JavaScript in sketch.js, and use class
+            names from the provided stylesheet. No CSS to write today. Open the
+            guide and pick <b>Helpers</b> or <b>The DOM</b> ,  your facilitator
+            will tell you which track to use.
           </p>
           <a href={SKETCH_URL} target="_blank" rel="noreferrer">
             Visit the p5.js editor <ExternalIcon />

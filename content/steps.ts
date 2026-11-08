@@ -6,14 +6,6 @@ export type InstructionCode = {
   highlights?: string[];
 };
 
-/** When Advanced mode is on, replaces parts of a numbered instruction. */
-export type AdvancedInstructionOverride = {
-  title?: string;
-  body?: string[];
-  /** Hide regular code blocks on this instruction (e.g. helper calls in sketch.js). */
-  omitCode?: boolean;
-};
-
 export type InstructionBlock = {
   number: string;
   title: string;
@@ -33,7 +25,6 @@ export type InstructionBlock = {
   keyboardDiagram?: boolean;
   /** Collapsible answer (e.g. after a “figure it out” prompt). */
   reveal?: InstructionReveal;
-  advanced?: AdvancedInstructionOverride;
 };
 
 export type InstructionReveal = {
@@ -41,11 +32,6 @@ export type InstructionReveal = {
   hideLabel?: string;
   body?: string[];
   code: InstructionCode;
-};
-
-export type AdvancedBlock = {
-  title: string;
-  body: string[];
 };
 
 export type StepVariant = "standard" | "finish";
@@ -58,7 +44,6 @@ export type Step = {
   intro: string;
   variant: StepVariant;
   instructions: InstructionBlock[];
-  advanced: AdvancedBlock;
 };
 
 import { P5_SIGNUP_URL, SKETCH_URL } from "@/lib/workshop-urls";
@@ -121,16 +106,61 @@ const FORM_CARD_BOTTOM_PLACEMENT = `<section class="card">
   <label for="top">Top text</label>
   <input id="top" type="text" placeholder="When the code finally runs">
 
-  // Add code here
+  // New code here
 
 </section>`;
 
 const PREVIEW_MEME_PLACEMENT = `<div class="preview">
   <img src="https://picsum.photos/200" alt="Your meme">
 
-  // Add code here
+  // New code here
 
 </div>`;
+
+/** Highlight target for placement snippets in the guide UI. */
+export const NEW_CODE = "// New code here";
+
+const DRAW_MARKER_PLACEMENT = `function draw() {
+  // ============================================
+  // code starts here
+  // ============================================
+
+  // New code here
+
+  // ============================================
+  // code ends here
+  // ============================================
+}`;
+
+const INDEX_CODE_MARKERS_PLACEMENT = `  <!-- ========== code starts here ========== -->
+
+  // New code here
+
+  <!-- ========== code ends here ========== -->`;
+
+const BELOW_BANNER_PLACEMENT = `<p>...</p>
+
+  // New code here`;
+
+const BELOW_HEADER_PLACEMENT = `</header>
+
+  // New code here`;
+
+const BELOW_HERO_PLACEMENT = `</section>
+
+  // New code here`;
+
+const FORM_CARD_TOP_UPLOAD_PLACEMENT = `<section class="card">
+
+  // New code here
+
+  <label for="top">Top text</label>`;
+
+const FORM_CARD_SLIDER_PLACEMENT = `<input id="bottom" type="text" placeholder="...">
+
+  // New code here
+
+</section>`;
 
 const DRAW_READ_TOP_JS = `let topText = topWords();
 console.log(topText);`;
@@ -182,12 +212,6 @@ export const steps: Step[] = [
         },
       },
     ],
-    advanced: {
-      title: "helpers.js and getElementById",
-      body: [
-        "helpers.js is already in the sketch. It uses document.getElementById so later steps can call short names like topWords(). The id in your HTML and the string inside getElementById(\"...\") must match exactly.",
-      ],
-    },
   },
   {
     slug: "keyboard-symbols",
@@ -218,12 +242,6 @@ export const steps: Step[] = [
         tip: "Laptop keys vary slightly by model. If yours looks different, ask your lecturer to point out the same symbols.",
       },
     ],
-    advanced: {
-      title: "Quotes in HTML and JavaScript",
-      body: [
-        "The same quotation marks wrap id=\"top\" in HTML and \"top\" inside getElementById(\"top\") in JavaScript.",
-      ],
-    },
   },
   {
     slug: "explore-your-sketch",
@@ -253,12 +271,6 @@ export const steps: Step[] = [
         tip: "The keyboard shortcut for the play button is Ctrl + Enter on Windows and Cmd + Enter on Mac. Save and refresh after every change from here on.",
       },
     ],
-    advanced: {
-      title: "topWords in helpers.js",
-      body: [
-        "Open topWords in helpers.js. It finds the element with document.getElementById(\"top\") and reads .value. Leave the file unchanged; you will use the helper in sketch.js unless you choose Advanced on a later step.",
-      ],
-    },
   },
   {
     slug: "add-the-banner",
@@ -280,6 +292,12 @@ export const steps: Step[] = [
           source: BANNER_HTML_PLAIN,
           copyable: false,
         },
+        codeSecondary: {
+          label: "HTML · where to type",
+          source: INDEX_CODE_MARKERS_PLACEMENT,
+          copyable: false,
+          highlights: [NEW_CODE],
+        },
       },
       {
         number: "2",
@@ -289,12 +307,6 @@ export const steps: Step[] = [
         ],
       },
     ],
-    advanced: {
-      title: "No id on the banner yet",
-      body: [
-        "A p is a paragraph. u underlines the word inside it. This paragraph has no id, so getElementById cannot find it yet.",
-      ],
-    },
   },
   {
     slug: "add-the-header",
@@ -316,6 +328,12 @@ export const steps: Step[] = [
           source: HEADER_HTML_PLAIN,
           copyable: false,
         },
+        codeSecondary: {
+          label: "HTML · below your banner",
+          source: BELOW_BANNER_PLACEMENT,
+          copyable: false,
+          highlights: [NEW_CODE],
+        },
       },
       {
         number: "2",
@@ -323,15 +341,9 @@ export const steps: Step[] = [
         body: [
           "Preview your changes. Notice that the two new elements that sit inside the `<header>` tag are in a row, with a light border below. The template sketch we are using has some default styling already setup.",
            ],
-        challenge: "Look through the files `style.css` and find where it says `header {` — the code inside those curly braces is the styling that gets applied to the `<header>` tag. What is the styling applied to the `<header>` tag?",
+        challenge: "Look through the files `style.css` and find where it says `header {` ,  the code inside those curly braces is the styling that gets applied to the `<header>` tag. What is the styling applied to the `<header>` tag?",
       },
     ],
-    advanced: {
-      title: "Structure without ids",
-      body: [
-        "`header` groups the top of the page. `div` is a plain box for the logo and the label. Still no id attributes, so nothing for getElementById yet.",
-      ],
-    },
   },
   {
     slug: "add-the-hero",
@@ -355,6 +367,12 @@ export const steps: Step[] = [
           source: HERO_HTML_PLAIN,
           copyable: true,
         },
+        codeSecondary: {
+          label: "HTML · below your header",
+          source: BELOW_HEADER_PLACEMENT,
+          copyable: false,
+          highlights: [NEW_CODE],
+        },
       },
       {
         number: "2",
@@ -365,12 +383,6 @@ export const steps: Step[] = [
         tip: "If something looks wrong, check that each closing tag matches its opening tag.",
       },
     ],
-    advanced: {
-      title: "Hero HTML tags",
-      body: [
-        "`section` groups this region. `h1` is a heading. `span` wraps one piece of a line, which is why `a m<span>!</span>me.` is copied rather than typed.",
-      ],
-    },
   },
   {
     slug: "add-css-classes",
@@ -437,12 +449,6 @@ export const steps: Step[] = [
         ],
       },
     ],
-    advanced: {
-      title: "class vs id",
-      body: [
-        "class connects an element to style.css and can be reused on many elements. id names one element so JavaScript can find it with document.getElementById. This step only adds classes; id comes on the form and preview later.",
-      ],
-    },
   },
   {
     slug: "add-the-preview",
@@ -463,6 +469,12 @@ export const steps: Step[] = [
           label: "HTML · index.html",
           source: PREVIEW_HTML,
           copyable: true,
+        },
+        codeSecondary: {
+          label: "HTML · below your hero",
+          source: BELOW_HERO_PLACEMENT,
+          copyable: false,
+          highlights: [NEW_CODE],
         },
       },
       {
@@ -494,12 +506,6 @@ export const steps: Step[] = [
         ],
       },
     ],
-    advanced: {
-      title: "src on the img",
-      body: [
-        "`src` is the address of the picture (`https://picsum.photos/200`). The browser loads that URL into the `img` tag. You will add more attributes on the preview later.",
-      ],
-    },
   },
   {
     slug: "add-top-text",
@@ -522,6 +528,12 @@ export const steps: Step[] = [
           source: TOP_INPUT_HTML,
           copyable: true,
         },
+        codeSecondary: {
+          label: "HTML · below your hero, above the preview",
+          source: BELOW_HERO_PLACEMENT,
+          copyable: false,
+          highlights: [NEW_CODE],
+        },
       },
       {
         number: "2",
@@ -531,12 +543,6 @@ export const steps: Step[] = [
         ],
       },
     ],
-    advanced: {
-      title: "Labels and ids",
-      body: [
-        "The `for` attribute on a label must match the `id` on the input. Later, `topWords()` will look up `id=\"top\"` with getElementById.",
-      ],
-    },
   },
   {
     slug: "read-the-text",
@@ -558,13 +564,8 @@ export const steps: Step[] = [
           source: DRAW_READ_TOP_JS,
           copyable: false,
         },
-        explained: "Pay attention to the case of the variable names and functions. Code is case sensitive, so 'myVariable' is not the same as 'myvariable'.",
-        advanced: {
-          omitCode: true,
-          body: [
-            "Inside `draw()`, in the marked area, use document.getElementById(\"top\") to find the input. Read `.value` into a variable named topText, then use console.log to print it.",
-          ],
-        },
+        explained:
+          "Pay attention to the case of the variable names and functions. Code is case sensitive, so 'myVariable' is not the same as 'myvariable'.",
       },
       {
         number: "2",
@@ -590,7 +591,7 @@ export const steps: Step[] = [
           label: "HTML · where the bottom field goes",
           source: FORM_CARD_BOTTOM_PLACEMENT,
           copyable: false,
-          highlights: ["// Add code here"],
+          highlights: [NEW_CODE],
         },
       },
       {
@@ -599,20 +600,14 @@ export const steps: Step[] = [
         body: [
           "Try editing the `sketch.js` file to print out the bottom text as well as the top. Just like with `topWords()` there's a function called `bottomWords()`. How would you print the bottom text to the console as well?",
         ],
-        advanced: {
-          omitCode: true,
-          body: [
-            "Add bottomText with getElementById(\"bottom\") and `.value`, same pattern as the top box. console.log both variables.",
-          ],
+        codeSecondary: {
+          label: "JavaScript · sketch.js · inside draw()",
+          source: DRAW_MARKER_PLACEMENT,
+          copyable: false,
+          highlights: [NEW_CODE],
         },
       },
     ],
-    advanced: {
-      title: "topWords() and bottomWords()",
-      body: [
-        "These helpers in helpers.js use getElementById with `\"top\"` and `\"bottom\"`. The id on your HTML must match exactly.",
-      ],
-    },
   },
   {
     slug: "write-on-image",
@@ -627,7 +622,7 @@ export const steps: Step[] = [
         number: "1",
         title: "Calling a function with arguments.",
         body: [
-          "You have already called functions like `topWords()` and `console.log(something)`. The values inside the parentheses are arguments — information you pass in so the function can use it.",
+          "You have already called functions like `topWords()` and `console.log(something)`. The values inside the parentheses are arguments ,  information you pass in so the function can use it.",
           "`writeOnImage()` takes arguments too. It uses them to put your meme text on the picture: first the top line, then the bottom line. You will add a third argument for text size later.",
           "In `draw()` you already read the inputs into variables. When you call `writeOnImage(...)`, what should you put inside the parentheses?",
         ],
@@ -636,11 +631,6 @@ export const steps: Step[] = [
           source: WRITE_ON_IMAGE_CALL_SYNTAX_JS,
           copyable: false,
           highlights: ["top", "bottom", "size"],
-        },
-        advanced: {
-          body: [
-            "Pass your `topText` and `bottomText` variables as the first two arguments, in that order.",
-          ],
         },
       },
       {
@@ -660,11 +650,6 @@ export const steps: Step[] = [
             copyable: false,
           },
         },
-        advanced: {
-          body: [
-            "Call writeOnImage(topText, bottomText) after your variables, or set `.textContent` on the overlay paragraphs yourself.",
-          ],
-        },
       },
       {
         number: "3",
@@ -683,7 +668,7 @@ export const steps: Step[] = [
           label: "HTML · where to add the new code",
           source: PREVIEW_MEME_PLACEMENT,
           copyable: false,
-          highlights: ["// Add code here"],
+          highlights: [NEW_CODE],
         },
       },
       {
@@ -694,12 +679,6 @@ export const steps: Step[] = [
         ],
       },
     ],
-    advanced: {
-      title: "writeOnImage()",
-      body: [
-        "writeOnImage() in helpers.js uses getElementById to find the overlay lines and sets their textContent from your variables. Read the function in helpers.js without rewriting it.",
-      ],
-    },
   },
   {
     slug: "add-preview-overlays",
@@ -716,12 +695,8 @@ export const steps: Step[] = [
         body: [
           "The p tags are in the right place, but writeOnImage() looks them up by id. Without matching ids, it has nothing to update.",
         ],
-        challenge: "Can you figure out which ids to add? Check helpers.js or the next reveal if you are stuck.",
-        advanced: {
-          body: [
-            "writeOnImage() uses getElementById with fixed id strings. Without those ids on your p tags, the function runs but cannot set `.textContent` on the lines.",
-          ],
-        },
+        challenge:
+          "Can you figure out which ids to add? Check helpers.js or the next reveal if you are stuck.",
       },
       {
         number: "2",
@@ -751,12 +726,6 @@ export const steps: Step[] = [
         ],
       },
     ],
-    advanced: {
-      title: "Ids on the overlay",
-      body: [
-        "`meme-top` and `meme-bottom` are the ids writeOnImage looks up. `.textContent` is where your saved topText and bottomText go.",
-      ],
-    },
   },
   {
     slug: "add-upload",
@@ -777,6 +746,12 @@ export const steps: Step[] = [
           label: "HTML · index.html",
           source: UPLOAD_HTML,
           copyable: true,
+        },
+        codeSecondary: {
+          label: "HTML · top of your form card",
+          source: FORM_CARD_TOP_UPLOAD_PLACEMENT,
+          copyable: false,
+          highlights: [NEW_CODE],
         },
       },
       {
@@ -809,14 +784,6 @@ export const steps: Step[] = [
         },
       },
     ],
-    advanced: {
-      title: "pictureOf() and showUploadedImage()",
-      body: [
-        "When you pick a file, showUploadedImage() runs. It uses getElementById(\"preview\") to find the img, then sets `.src` to a temporary URL from the file you chose.",
-        "Do not paste a second change listener into sketch.js or the upload will fire twice.",
-        "Read pictureOf and showUploadedImage in helpers.js; rewriting them is not required in class.",
-      ],
-    },
   },
   {
     slug: "keep-going",
@@ -826,12 +793,6 @@ export const steps: Step[] = [
     intro: "What to try after the workshop.",
     variant: "finish",
     instructions: [],
-    advanced: {
-      title: "applyMemeTextSize",
-      body: [
-        "applyMemeTextSize in helpers.js turns the size number into pixel sizes and updates the slider label (sizeLabel). Reading it is optional; rewriting it is not part of the class.",
-      ],
-    },
   },
   {
     slug: "add-text-size",
@@ -839,7 +800,7 @@ export const steps: Step[] = [
     summary: "Optional: add a size slider and resize the meme text.",
     kicker: "Extra activity",
     intro:
-      "The main workshop is done. If you want to go further, the finished Memeo app also has a text-size slider. You already know how to add inputs and read them in sketch.js — see if you can wire this one up.",
+      "The main workshop is done. If you want to go further, the finished Memeo app also has a text-size slider. You already know how to add inputs and read them in sketch.js ,  see if you can wire this one up.",
     variant: "standard",
     instructions: [
       {
@@ -848,6 +809,12 @@ export const steps: Step[] = [
         body: [
           "In the form card, under the bottom text field, add another input. HTML has an input type for sliders: use `type=\"range\"`. Range inputs also take `min` and `max` attributes to set the smallest and largest values.",
         ],
+        codeSecondary: {
+          label: "HTML · inside your form card",
+          source: FORM_CARD_SLIDER_PLACEMENT,
+          copyable: false,
+          highlights: [NEW_CODE],
+        },
       },
       {
         number: "2",
@@ -862,6 +829,12 @@ export const steps: Step[] = [
         body: [
           "In `draw()`, inside the area marked `code starts here`, call `fontSize()` and save the result in a variable. Pass that number to `writeOnImage` as a third argument, after top text and bottom text. Keep your `topText` and `bottomText` variables.",
         ],
+        codeSecondary: {
+          label: "JavaScript · sketch.js · inside draw()",
+          source: DRAW_MARKER_PLACEMENT,
+          copyable: false,
+          highlights: [NEW_CODE],
+        },
       },
       {
         number: "4",
@@ -871,27 +844,26 @@ export const steps: Step[] = [
         ],
       },
     ],
-    advanced: {
-      title: "fontSize()",
-      body: [
-        "`fontSize()` uses getElementById(\"size\") and `Number(...)` on `.value`. The slider needs `id=\"size\"`. The call becomes writeOnImage with top text, bottom text, then size. `applyMemeTextSize` in helpers.js also updates the label when `id=\"sizeLabel\"` is on the slider label.",
-      ],
-    },
   },
 ];
 
-export function getStepNavigation(slug: string) {
-  const index = steps.findIndex((step) => step.slug === slug);
+export function getStepNavigationForSteps(stepList: Step[], slug: string) {
+  const index = stepList.findIndex((step) => step.slug === slug);
   if (index === -1) {
     return null;
   }
 
   return {
-    step: steps[index],
+    step: stepList[index],
     index,
     number: index + 1,
-    total: steps.length,
-    previous: index > 0 ? steps[index - 1] : null,
-    next: index < steps.length - 1 ? steps[index + 1] : null,
+    total: stepList.length,
+    previous: index > 0 ? stepList[index - 1] : null,
+    next: index < stepList.length - 1 ? stepList[index + 1] : null,
   };
+}
+
+/** Helpers guide navigation. Prefer `getVersionStepNavigation` for versioned routes. */
+export function getStepNavigation(slug: string) {
+  return getStepNavigationForSteps(steps, slug);
 }

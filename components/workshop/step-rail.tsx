@@ -2,9 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { steps } from "@/content/steps";
 import { getStepRailInstructions } from "@/lib/instruction-rail";
-import { useWorkshopMode } from "@/lib/workshop-mode";
+import {
+  GUIDE_VERSIONS,
+  type GuideVersionId,
+  guideHomePath,
+  guideStepPath,
+} from "@/lib/workshop-versions";
 import { Arrow } from "./icons";
 
 const MOBILE_MAX = 720;
@@ -22,24 +26,27 @@ function useIsMobile() {
   return mobile;
 }
 
-export function StepRail({ currentSlug }: { currentSlug: string }) {
+export function StepRail({
+  currentSlug,
+  version,
+}: {
+  currentSlug: string;
+  version: GuideVersionId;
+}) {
   const [open, setOpen] = useState(false);
   const [minimized, setMinimized] = useState(false);
   const isMobile = useIsMobile();
-  const { advanced: advancedMode } = useWorkshopMode();
+  const steps = GUIDE_VERSIONS[version].steps;
   const total = steps.length;
   const currentIndex = steps.findIndex((s) => s.slug === currentSlug);
   const currentNumber = currentIndex >= 0 ? currentIndex + 1 : 1;
-  const currentStep = currentIndex >= 0 ? steps[currentIndex] : steps[0];
-  const railInstructions = getStepRailInstructions(currentStep, advancedMode);
-  const [lastSlug, setLastSlug] = useState(currentSlug);
-
-  if (currentSlug !== lastSlug) {
-    setLastSlug(currentSlug);
-    if (open) {
-      setOpen(false);
-    }
-  }
+  const currentStep = currentIndex >= 0 ? steps[currentIndex] : null;
+  const railInstructions = currentStep
+    ? getStepRailInstructions(currentStep)
+    : [];
+  useEffect(() => {
+    setOpen(false);
+  }, [currentSlug]);
 
   const openMobileSheet = () => {
     if (isMobile) {
@@ -83,9 +90,9 @@ export function StepRail({ currentSlug }: { currentSlug: string }) {
         ) : (
           <>
             <div className="rail-heading">
-              <span>Workshop steps</span>
+              <span>{GUIDE_VERSIONS[version].label}</span>
               <div>
-                <Link href="/guide">View all</Link>
+                <Link href={guideHomePath(version)}>View all</Link>
                 {!isMobile ? (
                   <button type="button" onClick={() => setMinimized(true)}>
                     Minimise
@@ -99,7 +106,7 @@ export function StepRail({ currentSlug }: { currentSlug: string }) {
                 return (
                   <div key={step.slug} className="rail-step-group">
                     <Link
-                      href={`/guide/${step.slug}`}
+                      href={guideStepPath(version, step.slug)}
                       className={`rail-step${isCurrent ? " current" : ""}`}
                       onClick={() => setOpen(false)}
                       aria-current={isCurrent ? "step" : undefined}
@@ -132,15 +139,17 @@ export function StepRail({ currentSlug }: { currentSlug: string }) {
 
 export function StepRailShell({
   currentSlug,
+  version,
   children,
 }: {
   currentSlug: string;
+  version: GuideVersionId;
   children: React.ReactNode;
 }) {
   return (
-    <main className="lesson-shell">
-      <StepRail currentSlug={currentSlug} />
+    <div className="lesson-shell">
+      <StepRail currentSlug={currentSlug} version={version} />
       {children}
-    </main>
+    </div>
   );
 }

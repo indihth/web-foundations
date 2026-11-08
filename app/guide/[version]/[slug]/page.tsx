@@ -1,25 +1,39 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AdvancedStepNote } from "@/components/workshop/advanced-step-note";
 import { Arrow } from "@/components/workshop/icons";
 import { LessonHeading } from "@/components/workshop/lesson-heading";
 import { LessonInstructions } from "@/components/workshop/lesson-instructions";
-import { getStepNavigation, steps } from "@/content/steps";
+import {
+  GUIDE_VERSIONS,
+  type GuideVersionId,
+  getVersionStepNavigation,
+  guideHomePath,
+  guideStepPath,
+  isGuideVersionId,
+} from "@/lib/workshop-versions";
 
 export const instant = false;
 
 export function generateStaticParams() {
-  return steps.map((step) => ({ slug: step.slug }));
+  return (["helpers", "dom"] as const).flatMap((version) =>
+    GUIDE_VERSIONS[version].steps.map((step) => ({
+      version,
+      slug: step.slug,
+    })),
+  );
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ version: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const navigation = getStepNavigation(slug);
+  const { version, slug } = await params;
+  if (!isGuideVersionId(version)) {
+    return { title: "Step not found" };
+  }
+  const navigation = getVersionStepNavigation(version, slug);
 
   if (!navigation) {
     return { title: "Step not found" };
@@ -28,13 +42,19 @@ export async function generateMetadata({
   return { title: navigation.step.title };
 }
 
-export default async function GuideStepPage({
+export default async function GuideVersionStepPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ version: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const navigation = getStepNavigation(slug);
+  const { version: versionParam, slug } = await params;
+
+  if (!isGuideVersionId(versionParam)) {
+    notFound();
+  }
+
+  const version = versionParam as GuideVersionId;
+  const navigation = getVersionStepNavigation(version, slug);
 
   if (!navigation) {
     notFound();
@@ -42,6 +62,7 @@ export default async function GuideStepPage({
 
   const { step, number, total, previous, next } = navigation;
   const progress = Math.round((number / total) * 100);
+  const versionMeta = GUIDE_VERSIONS[version];
 
   return (
     <article className="lesson">
@@ -61,16 +82,20 @@ export default async function GuideStepPage({
         </div>
         <b>{progress}%</b>
       </div>
-      <LessonHeading kicker={step.kicker} title={step.title} intro={step.intro} />
-      <AdvancedStepNote advanced={step.advanced} />
+      <LessonHeading
+        kicker={step.kicker}
+        title={step.title}
+        intro={step.intro}
+        versionLabel={versionMeta.label}
+      />
       <div className="instructions">
-        <LessonInstructions step={step} />
+        <LessonInstructions step={step} version={version} />
       </div>
       <nav className="lesson-navigation" aria-label="Lesson navigation">
         {previous ? (
           <Link
             className="previous"
-            href={`/guide/${previous.slug}`}
+            href={guideStepPath(version, previous.slug)}
           >
             <Arrow direction="left" />
             <span>
@@ -82,7 +107,7 @@ export default async function GuideStepPage({
           <span />
         )}
         {next ? (
-          <Link className="next" href={`/guide/${next.slug}`}>
+          <Link className="next" href={guideStepPath(version, next.slug)}>
             <span>
               <small>Step {number + 1}</small>
               Next
@@ -90,10 +115,10 @@ export default async function GuideStepPage({
             <Arrow />
           </Link>
         ) : (
-          <Link className="next" href="/">
+          <Link className="next" href={guideHomePath(version)}>
             <span>
               <small>You’re finished</small>
-              Back to home
+              Back to {versionMeta.label} steps
             </span>
             <Arrow />
           </Link>

@@ -15,7 +15,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Edit later
 
-- Guide steps and lesson copy: [`content/steps.ts`](content/steps.ts). Slugs become URLs (`/guide/set-up-the-page`).
+- **Helpers** guide steps: [`content/steps.ts`](content/steps.ts) at `/guide/helpers` and `/guide/helpers/[slug]`.
+- **The DOM** guide steps: [`content/dom-steps.ts`](content/dom-steps.ts) at `/guide/dom`. Starter files: [`public/example/dom-p5-files/`](public/example/dom-p5-files/).
+- Students choose a version at `/guide`. Old `/guide/[slug]` links redirect to `/guide/helpers/[slug]`.
 - Site look: [`app/globals.css`](app/globals.css) and fonts in [`app/layout.tsx`](app/layout.tsx).
 - Example app: [`public/example/index.html`](public/example/index.html) and related files in that folder.
 

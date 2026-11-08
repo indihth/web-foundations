@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Mono, Manrope } from "next/font/google";
 import { SiteHeader } from "@/components/workshop/site-header";
-import { WorkshopModeProvider } from "@/lib/workshop-mode";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -29,10 +28,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${manrope.variable} ${dmMono.variable}`}>
       <body>
-        <WorkshopModeProvider>
-          <SiteHeader />
-          {children}
-        </WorkshopModeProvider>
+        <SiteHeader />
+        {children}
       </body>
     </html>
   );
