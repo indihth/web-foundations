@@ -76,7 +76,7 @@ export default async function GuideVersionIndexPage({
           <div className="table-label">
             <span>Steps</span>
             <span>
-              {total} lessons · about 2 hours
+              {total} lessons · {version.durationLabel}
             </span>
           </div>
           {steps.map((step, index) => (

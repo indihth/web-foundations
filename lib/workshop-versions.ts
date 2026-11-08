@@ -13,6 +13,7 @@ export type GuideVersion = {
   id: GuideVersionId;
   label: string;
   description: string;
+  durationLabel: string;
   steps: Step[];
 };
 
@@ -21,6 +22,7 @@ export const GUIDE_VERSIONS: Record<GuideVersionId, GuideVersion> = {
     id: "helpers",
     label: "Helpers",
     description: "Call the functions already in the sketch.",
+    durationLabel: "about 2 hours",
     steps: helpersSteps,
   },
   dom: {
@@ -28,6 +30,7 @@ export const GUIDE_VERSIONS: Record<GuideVersionId, GuideVersion> = {
     label: "The DOM",
     description:
       "Use document.getElementById in sketch.js. Optional text-size helper in helpers.js.",
+    durationLabel: "about 1 hour",
     steps: domSteps,
   },
 };
