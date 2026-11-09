@@ -65,6 +65,22 @@ const FORM_CARD_SLIDER_PLACEMENT = `<input id="bottom" type="text" placeholder="
 
 </section>`;
 
+const INDEX_CODE_MARKERS_PLACEMENT = `  <!-- ========== code starts here ========== -->
+
+  // New code here
+
+  <!-- ========== code ends here ========== -->`;
+
+const BELOW_BANNER_PLACEMENT = `<p class="banner">...</p>
+
+  // New code here`;
+
+const BELOW_HEADER_PLACEMENT = `</header>
+
+  // New code here`;
+
+const STARTER_BANNER_HTML = `<p class="banner">Memeo is <u>free</u>, no sign-up, and runs entirely in your browser.</p>`;
+
 const STARTER_HEADER_HTML = `<header>
   <div class="logo">memeo</div>
   <div class="pill">Meme Generator</div>
@@ -196,37 +212,76 @@ export const domSteps: Step[] = [
   },
   {
     slug: "header-and-hero",
-    title: "Header and hero",
-    summary: "Type the top of the page with your lecturer.",
+    title: "Banner, header, and hero",
+    summary: "Copy the green banner, header, and hero into `index.html`.",
     kicker: "Build your page",
     intro:
-      "You will build from the top down. Follow along and type the header and hero between the code markers in `index.html`.",
+      "You will build from the top down. Copy the banner, header, and hero between the code markers in `index.html`, one block at a time.",
     variant: "standard",
     instructions: [
       {
         number: "1",
-        title: "Type the header and hero.",
+        title: "Add the banner.",
         body: [
-          "Open `index.html` and find the section that says `code starts here`. Type out the `header` block below ,  do not paste it.",
-          "Below your header, you may copy the hero `section`. Each part uses `class=\"...\"` so `style.css` can style it. You will use `id` attributes on a later step to hook elements up in JavaScript.",
+          "Open `index.html` and find the section that says `code starts here`. Copy the banner `p` below into that gap.",
+          "The `class=\"banner\"` attribute hooks this paragraph up to the green bar styles in `style.css`.",
         ],
         code: {
-          label: "HTML · index.html · type by hand",
-          source: STARTER_HEADER_HTML,
-          copyable: false,
+          label: "HTML · banner",
+          source: STARTER_BANNER_HTML,
+          copyable: true,
         },
         codeSecondary: {
-          label: "HTML · hero section · copy below header",
+          label: "HTML · where to paste",
+          source: INDEX_CODE_MARKERS_PLACEMENT,
+          copyable: false,
+          highlights: HIGHLIGHT_NEW,
+        },
+      },
+      {
+        number: "2",
+        title: "Add the header.",
+        body: [
+          "Below your banner paragraph, copy the `header` block.",
+          "The `logo` and `pill` classes style the site title and the small label on the right.",
+        ],
+        code: {
+          label: "HTML · header",
+          source: STARTER_HEADER_HTML,
+          copyable: true,
+        },
+        codeSecondary: {
+          label: "HTML · below your banner",
+          source: BELOW_BANNER_PLACEMENT,
+          copyable: false,
+          highlights: HIGHLIGHT_NEW,
+        },
+      },
+      {
+        number: "3",
+        title: "Add the hero.",
+        body: [
+          "Below your `header`, copy the hero `section`.",
+          "Each part uses `class=\"...\"` so `style.css` can style it. You will use `id` attributes on a later step to hook elements up in JavaScript.",
+        ],
+        code: {
+          label: "HTML · hero section",
           source: STARTER_HERO_SECTION_HTML,
           copyable: true,
+        },
+        codeSecondary: {
+          label: "HTML · below your header",
+          source: BELOW_HEADER_PLACEMENT,
+          copyable: false,
+          highlights: HIGHLIGHT_NEW,
         },
         tip: "If your HTML looks messy after pasting, tidy the indentation: Ctrl + Shift + F on Windows, Cmd + Shift + F on Mac (with the file open in the editor).",
       },
       {
-        number: "2",
+        number: "4",
         title: "Preview the top of the page.",
         body: [
-          "Play the sketch. You should see the logo, pill, and hero text styled like the finished Memeo app.",
+          "Play the sketch. You should see the green banner bar, logo, pill, and hero text styled like the finished Memeo app.",
           "If something looks plain, check that your class names match the reference exactly.",
         ],
       },
@@ -456,11 +511,8 @@ export const domSteps: Step[] = [
         number: "3",
         title: "Show the image once.",
         body: [
-          "Below your text lines in `draw()`, run the upload logic only while the preview image is still hidden ,  for example, check `preview.hidden` first.",
-          "When the user has chosen a file, use the helper in `helpers.js` that turns the file input into a URL for the `src` attribute.",
-          "When you have a URL, set `preview.src`, set `preview.hidden` to `false`, and hide the empty-message element.",
-          "Do not `return` early from `draw()`: that would stop your text from updating when there is no file yet.",
-          "Do not run the file-to-URL logic on every frame after the image is visible ,  only while the image is still hidden.",
+          "Below your `getElementById` lines in `draw()`, add an `if` that only runs while `preview` is still hidden.",
+          "When `photo` has a file, use `pictureOf(photo)` to set `preview.src`, show the preview, and hide the empty message.",
         ],
         codeSecondary: {
           label: "JavaScript · sketch.js · below your getElementById lines",

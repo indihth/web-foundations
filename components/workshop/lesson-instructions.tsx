@@ -219,7 +219,7 @@ function FinishInstructions({
       >
         <p>
           {isDom
-            ? "Open the finished Memeo app beside your sketch. The example also has a top banner bar that this track did not build ,  that is fine."
+            ? "Open the finished Memeo app beside your sketch and compare the banner, header, hero, form, and preview."
             : "Open the finished Memeo app beside your sketch. Your page may skip the empty-state message. That is fine for today."}
         </p>
       </Instruction>
