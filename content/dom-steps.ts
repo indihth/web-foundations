@@ -198,7 +198,6 @@ export const domSteps: Step[] = [
           "The `index.html` file is set up with what we need to start. The `<body>` of the page is empty ,  this is where you will add code to build the page.",
           "You will use `sketch.js` later to connect the page with JavaScript.",
         ],
-        tip: "You will edit `index.html` and `sketch.js` only. `helpers.js` is provided ,  leave it alone unless your lecturer says otherwise. Leave `setup()` and `noCanvas()` in sketch.js alone.",
       },
       {
         number: "2",
