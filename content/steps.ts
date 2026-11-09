@@ -787,7 +787,7 @@ export const steps: Step[] = [
   },
   {
     slug: "add-text-size",
-    title: "Add text size",
+    title: "Extra: Add Text Size",
     summary: "Optional: add a size slider and resize the meme text.",
     kicker: "Extra activity",
     intro:

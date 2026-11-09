@@ -1385,6 +1385,8 @@ svg {
 
 .tip p {
   font-size: 0.875rem;
+  color: var(--ink);
+  margin-bottom: 0;
 }
 
 .challenge {
@@ -1405,6 +1407,8 @@ svg {
 
 .challenge p {
   font-size: 0.875rem;
+  color: var(--ink);
+  margin-bottom: 0;
 }
 
 .explained {
@@ -1425,6 +1429,8 @@ svg {
 
 .explained p {
   font-size: 0.875rem;
+  color: var(--ink);
+  margin-bottom: 0;
 }
 
 .advanced-step-note {

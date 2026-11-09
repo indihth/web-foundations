@@ -341,7 +341,7 @@ export const domSteps: Step[] = [
         number: "1",
         title: "Find the overlay lines.",
         body: [
-          "Use `getElementById` to store `#meme-top` and `#meme-bottom` in variables, or reuse your approach from the input step.",
+          "Use `getElementById` to store `#meme-top` and `#meme-bottom` in variables.",
         ],
         codeSecondary: {
           label: "JavaScript · sketch.js · inside draw()",
@@ -381,7 +381,7 @@ export const domSteps: Step[] = [
   {
     slug: "show-uploaded-image",
     title: "Empty message and image",
-    summary: "Add the placeholder and hidden img inside the preview.",
+    summary: "Add the placeholder and preview img inside the preview.",
     kicker: "Build your page",
     intro:
       "Before the upload button, add the markup for the empty state and the image that will replace it.",
@@ -392,7 +392,7 @@ export const domSteps: Step[] = [
         title: "Empty message and img.",
         body: [
           "Inside `.preview`, add a `p` with class `empty` and `id=\"empty\"` ,  a message like “No image yet”.",
-          "Add an `img` with `id=\"preview\"`, `alt=\"Your meme\"`, and the `hidden` attribute so it does not show until you upload a photo.",
+          "Add an `img` with `id=\"preview\"` and `alt=\"Your meme\"`.",
           "The `img` tag displays a picture when you set its `src` attribute later in JavaScript.",
         ],
         codeSecondary: {
@@ -401,7 +401,17 @@ export const domSteps: Step[] = [
           copyable: false,
           highlights: HIGHLIGHT_NEW,
         },
-        tip: "When you play the sketch, the dashed empty message should be visible and the image hidden.",
+        tip: "When you play the sketch, the dashed empty message should be visible. You will hide the image in the next step.",
+      },
+      {
+        number: "2",
+        title: "Hide the preview image.",
+        body: [
+          "Keep the preview `img` invisible by default so you can show it from JavaScript after upload.",
+          
+        ],
+        challenge:
+          "Google how to hide it in HTML and add what you find. Try keywords like 'html tag',  'visible', 'hide' etc. The answer is quite simple...",
       },
     ],
   },
@@ -479,7 +489,7 @@ export const domSteps: Step[] = [
   },
   {
     slug: "add-text-size",
-    title: "Add text size",
+    title: "Extra: Add Text Size",
     summary: "Optional: add a size slider and resize the meme text.",
     kicker: "Extra activity",
     intro:
